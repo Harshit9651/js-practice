@@ -1,12 +1,11 @@
 const promiseObjs = new Promise((resolve,reject)=>{
-    let req =false;
+    let req =true;
     if(req){
-        resolve('hello i am harshit ')
+        resolve([1,2,3,4,5,67,8,9,10])
     }else{
         reject('sorry this is error ')
     }
-})
-promiseObjs.then(
+}).then(
     (value)=>{console.log(value)},
-(error)=>{console.log(error)}
-)
+
+).catch((error)=>{console.log(error)})
