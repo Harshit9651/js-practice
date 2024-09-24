@@ -23,7 +23,7 @@
 //     console.log(error)
 // })
 
-const arr = [2, 4, ];
+const arr = [2, 4, 6,8];
 
 const printFunction = new Promise((resolve, reject) => {
     let totalDelay = 0;
@@ -36,7 +36,7 @@ const printFunction = new Promise((resolve, reject) => {
             totalDelay=0;
             if (index === arr.length - 1) {
                
-                reject();
+            resolve();
             }
         }, totalDelay * 1000); 
     });
