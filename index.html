@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
     <title>Document</title>
 </head>
 <body>
-   
-</body>
-<script>
-    function* generatevalue(){
-        yield 3;
-        yield 5;
-        return 8;
-    }
+    <div class="maincontainer">
+        <input class="input"  type="text" placeholder="enter email">
+        <input  class="input"  type="tel" placeholder="enter number">
+        <input  class="input"  type="text" placeholder="enter your first name ">
+        <input class="input"  type="text" placeholder="enter you last name ">
+        <input class="input"  type="text"  placeholder="enter father name" id="">
 
-    let generator = generatevalue();
-    const gen = generator.next();
-    const genn = generator.next();  const three = generator.next();  
-    alert(JSON.stringify(three))
-</script>
+    </div>
+</body>
 </html>
