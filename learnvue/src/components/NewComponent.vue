@@ -1,5 +1,7 @@
 <template >
+  
 <div>
+
 <ul>
     <li v-for="item in learn" :key ="item">
         <ChildComponent :newdata="item"/>
@@ -14,7 +16,7 @@
 
 </div>
 </template>
-<script>
+<script >
 import ChildComponent from './ChildComponent.vue';
 export default{
     

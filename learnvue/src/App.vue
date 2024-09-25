@@ -1,19 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <NewComponent/>
-  <HarshitSharma/>
+ <ComPose/>
   
 </template>
 
 <script>
-
-import NewComponent from './components/NewComponent.vue';
-import HarshitSharma from './components/HarshitSharma.vue'
+import ComPose  from './components/ComPose.vue'
 export default {
   name: 'App',
   components: {
-  NewComponent,
-  HarshitSharma
+ ComPose
   }
 }
 </script>
