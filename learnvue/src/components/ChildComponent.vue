@@ -1,13 +1,14 @@
 <template>
-    <div><h1>{{ name }}</h1>
-    <button v-on:click="getfunction()">click me </button></div>
+<div>    <h1>hello parnts componenent </h1>
+    <h1>{{ item }}</h1></div>
 </template>
 <script>
 export default{
     name:'ChildComponent',
     props:{
-        name:String,
-        getfunction: Function
+        data : Object,
+        item:Array,
+      
     }
 }
 

@@ -2,16 +2,16 @@
 <div>
 <ul>
     <li v-for="item in learn" :key ="item">
-        {{ item }}
+        <ChildComponent :newdata="item"/>
     </li>
 </ul>
 <br><br>
 <ul>
     <li v-for="data in users" :key ="data">
- name :{{  data.name }}  email: {{ email = data.email }}  phoneNumber:{{ phonenumber = data.number }}
-    </li>
+<ChildComponent :data="data"/>
+ </li>
 </ul>
-<ChildComponent name="harshit sharma " :getfunction ='getfunction'/>
+
 </div>
 </template>
 <script>
