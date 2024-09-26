@@ -1,11 +1,11 @@
 import{createRouter,createWebHistory} from 'vue-router'
-import LandingPage from '../src/components/LandingPage.vue'
+import HeroPage from './components/HeroPage.vue'
 import SignUp from './components/SignUp.vue'
 import SignIn from './components/SignIn.vue'
 const routes = [
-  {  name:'LandingPage',
+  {  name:'HeroPage',
     path :'/',
-component: LandingPage
+component:HeroPage, 
 },
 {
     name:'SignIn',

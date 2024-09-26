@@ -1,27 +1,13 @@
 <template>
   <div id="app">
-    <HeaderPage/>
-    <HeroPage/>
-    <FeaturePage />
-    <FooterPage/>
-    <!-- <router-view /> -->
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HeaderPage from "./components/HeaderPage.vue";
-import HeroPage from "./components/HeroPage.vue";
-import FeaturePage from "./components/FeaturePage.vue";
-import FooterPage from "./components/FooterPage.vue";
 
 export default {
   name: "App",
-  components: {
-    HeaderPage,
-    HeroPage,
-    FeaturePage,
-    FooterPage,
-  },
 };
 </script>
 

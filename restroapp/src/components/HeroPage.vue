@@ -1,5 +1,5 @@
 <template>
-  
+<div>  <HeaderPage></HeaderPage>
   <section class="hero">
     <div class="hero-content">
       <h1>Welcome to Our Gourmet Restaurant</h1>
@@ -7,7 +7,7 @@
       <router-link to="/SignIn" class="btn">Reserve a Table</router-link>
     </div>
   </section>
-
+  <FeaturePage></FeaturePage>
   <section class="features">
     <div class="feature-content">
       <h2>What We Offer</h2>
@@ -49,8 +49,25 @@
       <span>- Michael B.</span>
     </div>
   </section>
-
+<FooterPage></FooterPage></div>
 </template>
+
+
+<script>
+import HeaderPage from './HeaderPage.vue';
+import FooterPage from './FooterPage.vue';
+import FeaturePage from './FeaturePage.vue';
+
+export default {
+  name: 'HomePage',
+  components: {
+    HeaderPage,
+    FooterPage,
+    FeaturePage
+  }
+}
+</script>
+
 
 <style scoped>
 
