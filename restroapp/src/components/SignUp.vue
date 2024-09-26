@@ -98,7 +98,7 @@
     if (validateForm()) {
       try {
         // Replace this URL with your actual backend endpoint
-        const response = await fetch('https://your-api-url.com/signup', {
+        const response = await fetch('http://localhost:3000/SignUp', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
