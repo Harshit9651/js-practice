@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import HeaderPage from "./components/";
-import HeroPage from "./components/Hero.vue";
-import FeaturePage from "./components/Features.vue";
-import FooterPage from "./components/Footer.vue";
+import HeaderPage from "./components/HeaderPage.vue";
+import HeroPage from "./components/HeroPage.vue";
+import FeaturePage from "./components/FeaturePage.vue";
+import FooterPage from "./components/FooterPage.vue";
 
 export default {
   name: "App",
