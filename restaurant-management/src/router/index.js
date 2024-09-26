@@ -1,8 +1,8 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
-import Dashboard from '@/views/Dashboard.vue';
-import AddMenuItem from '@/views/AddMenuItem.vue';
-import EditMenuItem from '@/views/EditMenuItem.vue';
+import Dashboard from '../components/DashBoard.vue';
+import AddMenuItem from '../components/AddMentuItem.vue';
+import EditMenuItem from '../components/EditMenuItem.vue';
 
 const routes = [
   {

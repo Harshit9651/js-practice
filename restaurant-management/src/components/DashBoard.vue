@@ -14,7 +14,7 @@
   <script setup>
   import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
-  import { menuService } from '@/services/menuService';
+  import { menuService } from '../services/MenuService';
   
   const router = useRouter();
   const menuItems = ref([]);
