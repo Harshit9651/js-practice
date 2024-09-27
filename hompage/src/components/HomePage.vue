@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <!-- Navbar -->
+ 
     <nav class="navbar">
-    
-        <div class="navbar-left">
-        <img src="../assets/foyrlogo.png" alt="Company Logo" class="company-logo" /> <!-- Replace with your logo path -->
+      <div class="navbar-left">
+        <img src="../assets/foyrlogo.png" alt="Company Logo" class="company-logo" />
       </div>
-      
-      <div class="navbar-center">
+
+      <div class="hamburger" @click="toggleNavbar">
+        <i class="fa fa-bars">.</i>
+      </div>
+
+
+      <div :class="['navbar-center', { 'active': showNav }]">
         <ul>
           <li>Home</li>
           <li>Explore</li>
@@ -15,7 +19,9 @@
           <li>Whislet</li>
         </ul>
       </div>
-      <div class="navbar-right">
+
+  
+      <div :class="['navbar-right', { 'active': showNav }]">
         <button class="credit-btn">30 Credit</button>
         <button class="upgrade-btn">Upgrade</button>
         <div class="divider"></div>
@@ -23,7 +29,6 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section">
       <div class="left-content">
         <h1>Design the home you desire</h1>
@@ -41,7 +46,7 @@
         </div>
       </div>
     </section>
-     <!-- Transform Your Space Section -->
+    
      <section class="transform-space">
       <h2>Transform Your Space with AI</h2>
       <div class="card-container">
@@ -77,6 +82,16 @@ export default {
   components: {
     CardPage,
   },
+  data() {
+    return {
+      showNav: false
+    };
+  },
+  methods: {
+    toggleNavbar() {
+      this.showNav = !this.showNav;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -91,117 +106,6 @@ export default {
 }
 
 
-
-// .navbar {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   padding: 20px;
-//   background-color: white;
-//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-//   z-index: 1000;
-
-//   .navbar-left {
-//     display: flex;
-//     align-items: center;
-
-//     .company-logo {
-//       width: 100px;
-//       height: auto; 
-//     }
-//   }
-
-//   .navbar-center {
-//     flex-grow: 1;  
-//     display: flex;  flex-shrink: 1;
-//     justify-content: center; 
-    
-//     ul {
-//       list-style: none;
-//       display: flex;
-//       gap: 20px;
-
-//       li {
-//         cursor: pointer;
-//         font-size: 15px;
-//       }
-//     }
-//   }
-
-//   .navbar-right {
- 
-//     display: flex;
-//   align-items: center;
-//   gap: 10px;
-//   white-space: nowrap;
-
-//     .credit-btn,
-//     .upgrade-btn {
-//       display: flex;
-//       align-items: center;
-//       padding: 10px 20px;
-//       border: none;
-//       cursor: pointer;
-//       border-radius: 1.8rem;
-//     }
-
-//     .credit-btn {
-//   background-color: black; 
-//   color: white;
-//   gap: 10px;
-//   padding: 10px 20px;
-//   border: none;
-//   cursor: pointer;
-//   font-size: 16px;
-//   position: relative;
-//   transition: all 0.3s ease;
-//   z-index: 1; 
-//   overflow: hidden; 
-// }
-
-// .credit-btn::before {
-//   content: "🪙";
-//   margin-right: 5px;
-//   font-size: 18px;
-// }
-
-
-// .credit-btn:hover {
-//   box-shadow: 0px 0px 20px 10px rgba(189, 59, 250, 0.6),0px 0px 40px 20px rgba(63, 232, 255, 0.4);
-// }
-
-
-
-//     .upgrade-btn {
-//       background: linear-gradient(271.06deg, #BD3BFA 0.91%, #3FE8FF 103.4%);
-//       color: white;
-//       gap: 10px;
-//       &::before {
-//         content: "👑";
-//         margin-right: 5px;
-//         font-size: 18px;
-//       }
-//     }
-
-//     .divider {
-//       width: 1px;
-//       height: 40px;
-//       background-color: #ccc;
-//       margin: 0 10px;
-//     }
-
-//     .user-profile {
-//       font-size: 18px;
-//       padding: 5px 10px;
-//       background-color: #f0f0f0;
-//       border-radius: 20px;
-//       white-space: nowrap;  /* Prevent text from wrapping */
-//     }
-//   }
-// }
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -214,156 +118,94 @@ export default {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 
-  .navbar-left {
-    display: flex;
-    align-items: center;
-
-    .company-logo {
-      width: 80px;
-      height: auto;
-    }
+  .company-logo {
+    width: 100px;
+    height: auto;
   }
 
-  .navbar-center {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-
-    ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-
-      li {
-        cursor: pointer;
-        font-size: 15px;
-      }
-    }
-  }
-
+  .navbar-center,
   .navbar-right {
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    .credit-btn,
-    .upgrade-btn {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      border-radius: 1.8rem;
-    }
-
-    .credit-btn {
-      background-color: black;
-      color: white;
-      gap: 10px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .upgrade-btn {
-      background: linear-gradient(271.06deg, #BD3BFA 0.91%, #3FE8FF 103.4%);
-      color: white;
-      &::before {
-        content: "👑";
-        margin-right: 5px;
-      }
-    }
-
-    .divider {
-      width: 1px;
-      height: 40px;
-      background-color: #ccc;
-    }
-
-    .user-profile {
-      font-size: 18px;
-      padding: 5px 10px;
-      background-color: #f0f0f0;
-      border-radius: 20px;
-    }
+    gap: 20px;
   }
 
-  // Make the navbar responsive
-  @media (max-width: 1024px) {
-    padding: 15px;
-
-    .navbar-center ul {
-      gap: 15px;
-
-      li {
-        font-size: 14px;
-      }
-    }
-
-    .credit-btn,
-    .upgrade-btn {
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-
-    .divider {
-      height: 30px;
-    }
-
-    .company-logo {
-      width: 70px;
-    }
+  .navbar-center ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
   }
 
+  .navbar-center li {
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .navbar-right .credit-btn,
+  .navbar-right .upgrade-btn {
+    padding: 10px 20px;
+    border-radius: 1.8rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .credit-btn {
+    background-color: black;
+    color: white;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .upgrade-btn {
+    background: linear-gradient(271.06deg, #bd3bfa 0.91%, #3fe8ff 103.4%);
+    color: white;
+  }
+
+  .divider {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc;
+  }
+
+  .user-profile {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+  }
+
+  /* Hamburger menu for mobile view */
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  /* Mobile and tablet responsiveness */
   @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 10px;
-
-    .navbar-center {
-      margin-top: 10px;
-      ul {
-        flex-direction: column;
-        gap: 10px;
-
-        li {
-          font-size: 16px;
-        }
-      }
-    }
-
+    .navbar-center,
     .navbar-right {
-      margin-top: 10px;
+      display: none;
       flex-direction: column;
-      gap: 10px;
-
-      .credit-btn,
-      .upgrade-btn {
-        font-size: 14px;
-        padding: 8px 14px;
-      }
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 999;
     }
-  }
 
-  @media (max-width: 480px) {
-    .navbar-left .company-logo {
-      width: 60px;
+    .navbar-center.active,
+    .navbar-right.active {
+      display: flex;
     }
 
     .navbar-center ul {
-      li {
-        font-size: 14px;
-      }
+      flex-direction: column;
+      padding: 0;
     }
 
-    .credit-btn,
-    .upgrade-btn {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-
-    .user-profile {
-      font-size: 16px;
+    .hamburger {
+      display: block;
     }
   }
 }
@@ -384,6 +226,7 @@ export default {
       #EC9797E5,
       #F3D8B5B5);
 
+  // Left content styles
   .left-content {
     width: 487px;
     height: 196px;
@@ -391,25 +234,22 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 1;
 
+    h1 {
+      font-family: 'Unbounded';
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 56px;
+      letter-spacing: -0.03em;
+      text-align: left;
+      color: black;
+    }
 
-h1 {
-    font-family: 'Unbounded';
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 56px;
-    letter-spacing: -0.03em;
-    text-align: left;
-    color: black;
-}
-
-
-.input-wrapper {
+    .input-wrapper {
       margin-top: 20px;
-      position: relative; /* Set position to relative */
       display: flex;
       align-items: center;
+      position: relative;
 
       input {
         padding: 20px;
@@ -418,7 +258,7 @@ h1 {
         border-radius: 30px;
         outline: none;
         transition: border-color 0.3s;
-        padding-right: 100px; /* Adjust padding to accommodate the button */
+        padding-right: 100px;
 
         &:focus {
           border-color: #3498db;
@@ -426,10 +266,10 @@ h1 {
       }
 
       .generate-btn {
-        position: absolute; 
-        right: 10px; 
-        top: 50%; 
-        transform: translateY(-50%); 
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
         padding: 15px 25px;
         background: linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%);
         color: white;
@@ -445,6 +285,7 @@ h1 {
     }
   }
 
+  // Right content styles
   .right-content {
     flex: 1;
     display: flex;
@@ -453,7 +294,7 @@ h1 {
 
     .hero-image {
       opacity: 0.8;
-      border-radius: 20px 0 0 0;
+      border-radius: 20px;
     }
 
     .main-image {
@@ -470,25 +311,76 @@ h1 {
     .sub-image {
       width: 182px;
       height: 217px;
-      opacity: 0.8;
-      border-radius: 20px;
-    }
-
-    .subimage1 {
       border-radius: 20px;
     }
 
     .subimage2 {
       width: 231px;
       height: 217px;
-      border-radius: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+
+    .left-content {
+      width: 100%;
+      height: auto;
+
+      h1 {
+        font-size: 28px;
+        line-height: 40px;
+      }
+
+      .input-wrapper {
+        flex-direction: column;
+
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 15px; 
+        }
+
+        .generate-btn {
+          width: 30%;
+          padding: 9px; 
+   
+        }
+      }
+    }
+
+    .right-content {
+      width: 100%;
+      align-items: center;
+      margin-top: 20px;
+
+      .main-image {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+      }
+
+      .sub-images {
+        flex-direction: column;
+        align-items: center;
+
+        .sub-image {
+          width: 100%;
+          height: auto;
+          max-width: 200px;
+          margin-bottom: 10px;
+        }
+      }
     }
   }
 }
+
 .transform-space {
   margin-top: 50px; 
   padding: 20px;
-  // text-align: center;
+
 }
 
 .card-container {
