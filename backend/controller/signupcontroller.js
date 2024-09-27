@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 exports.SignUp = async(req,res)=>{
     try {
-        const { username, email, password, confirmPassword } = req.body;
+        const { username, email, password, confirmPassword,role } = req.body;
     
   
         if (!username || !email || !password || !confirmPassword) {
@@ -16,7 +16,7 @@ exports.SignUp = async(req,res)=>{
           return res.status(400).json({ message: 'Passwords do not match' });
         }
     
-        const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+        const existingUser = await User.findOne({ $or: [{ email }, { username },{role}] });
         if (existingUser) {
           return res.status(400).json({ message: 'Username or email already taken' });
         }
@@ -26,6 +26,7 @@ exports.SignUp = async(req,res)=>{
           username,
           email,
           password,
+          role
         });
     
 
@@ -68,4 +69,8 @@ console.log('user is valid ')
         console.error(error);
         return res.status(500).json({ message: 'Server error' });
       }
+}
+exports.MenuItem = async(req,res)=>{
+    const{name,description,price} = req.body
+    console.log(name,description,price)
 }
