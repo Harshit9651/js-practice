@@ -22,8 +22,8 @@
 
   
       <div :class="['navbar-right', { 'active': showNav }]">
-        <button class="credit-btn">30 Credit</button>
-        <button class="upgrade-btn">Upgrade</button>
+        <button class="credit-btn"><img src="../assets/coin-4 1.png" alt=""> 30 Credit</button>
+        <button class="upgrade-btn"> <i class="fa-solid fa-crown"></i> Upgrade</button>
         <div class="divider"></div>
         <div class="user-profile"><i class="fa-regular fa-user"></i></div>
       </div>
@@ -51,49 +51,68 @@
       <h2>Transform Your Space with AI</h2>
       <div class="card-container">
   
-        <CardPage 
-          image="../assets/cardimage.png" 
-          title="Beautiful Living Room" 
-          description="A cozy and stylish living room that makes you feel at home." 
-        />
-        <CardPage 
-          image="../assets/cardimage.png" 
-          title="Beautiful Living Room" 
-          description="A cozy and stylish living room that makes you feel at home." 
-        />
-        <CardPage 
-          image="../assets/cardimage.png" 
-          title="Beautiful Living Room" 
-          description="A cozy and stylish living room that makes you feel at home." 
-        />
-        <CardPage 
-          image="../assets/cardimage.png" 
-          title="Beautiful Living Room" 
-          description="A cozy and stylish living room that makes you feel at home." 
-        />
+       <CardPage v-for="(card,index) in cards" :key="index"  :image="card.image"
+          :title="card.title"
+          :description="card.description"
+          :buttonText="card.buttonText"/>
       
       </div>
     </section>
   </div>
 </template>
-<script>
+<script setup>
+import { ref } from 'vue';
 import CardPage from './CardPage.vue';
-export default {
-  components: {
-    CardPage,
-  },
-  data() {
-    return {
-      showNav: false
-    };
-  },
-  methods: {
-    toggleNavbar() {
-      this.showNav = !this.showNav;
-    }
-  }
+
+
+const showNav = ref(false);
+
+
+const toggleNavbar = () => {
+  showNav.value = !showNav.value;
 };
+const cards = ref([
+  {
+    image: 'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Beautiful Living Room',
+    description: 'A cozy and stylish living room that makes you feel at home.',
+    buttonText: 'Re-Imagine My Room',
+  },
+  {
+    image: 'https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Elegant Bedroom',
+    description: 'A serene and comfortable space to relax and unwind.',
+    buttonText: 'Re-Imagine My Room',
+  },
+  {
+    image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Modern Kitchen',
+    description: 'A sleek and functional kitchen design for all your needs.',
+    buttonText: 'Re-Imagine My Room',
+  },
+  {
+    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Chic Office Space',
+    description: 'A stylish workspace that boosts creativity and productivity.',
+    buttonText: 'Re-Imagine My Room',
+  },
+  {
+    image: 'https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Chic Office Space',
+    description: 'A stylish workspace that boosts creativity and productivity.',
+    buttonText: 'Re-Imagine My Room',
+  },
+  {
+    image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Chic Office Space',
+    description: 'A stylish workspace that boosts creativity and productivity.',
+    buttonText: 'Re-Imagine My Room',
+  }, 
+]);
+
+
 </script>
+
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.css';
@@ -139,6 +158,10 @@ export default {
   .navbar-center li {
     cursor: pointer;
     font-size: 15px;
+    &:hover{
+      color: #dc550c;
+      font: 300;
+    }
   }
 
   .navbar-right .credit-btn,
@@ -149,16 +172,55 @@ export default {
     cursor: pointer;
   }
 
+
   .credit-btn {
-    background-color: black;
-    color: white;
-    transition: box-shadow 0.3s ease;
+  background-color: black;
+  color: white;
+  transition: box-shadow 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 1.8rem;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+
+  img {
+    width: 20px;
+    height: auto;
   }
+  &:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2), 0 0 20px 10px rgba(0, 0, 0, 0.1), 
+                0 0 30px 15px #bd3bfa; // Shadow with gradient colors
+  }
+}
+
 
   .upgrade-btn {
-    background: linear-gradient(271.06deg, #bd3bfa 0.91%, #3fe8ff 103.4%);
-    color: white;
+  background: linear-gradient(271.06deg, #bd3bfa 0.91%, #3fe8ff 103.4%);
+  color: white;
+  padding: 10px 20px; 
+  border-radius: 1.8rem;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+
+  i {
+    width: 20px; 
+    height: auto;
+  
   }
+  &:hover{
+    box-shadow: 0 0 10px 5px rgba(34, 130, 194, 0.2), 0 0 20px 10px rgba(197, 105, 105, 0.1), 
+    0 0 30px 15px #291034; 
+  }
+}
 
   .divider {
     width: 1px;
@@ -172,14 +234,14 @@ export default {
     border-radius: 20px;
   }
 
-  /* Hamburger menu for mobile view */
+
   .hamburger {
     display: none;
     font-size: 30px;
     cursor: pointer;
   }
 
-  /* Mobile and tablet responsiveness */
+ 
   @media (max-width: 768px) {
     .navbar-center,
     .navbar-right {
