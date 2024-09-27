@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Global styles */
 body {
   margin: 0;
