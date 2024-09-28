@@ -1,13 +1,13 @@
 <template>
-<HomePage></HomePage>
+<ReImage></ReImage>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
+import ReImage from './components/ReImage.vue';
 export default {
   name: 'App',
   components: {
-    HomePage
+ ReImage
   }
 }
 </script>
