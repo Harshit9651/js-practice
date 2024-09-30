@@ -1,13 +1,13 @@
 <template>
-<ReImage></ReImage>
+<CreateYourDesign></CreateYourDesign>
 </template>
 
 <script>
-import ReImage from './components/ReImage.vue';
+// import { createTextVNode } from 'vue';
+import CreateYourDesign from './components/CreateYourDesign.vue';
 export default {
   name: 'App',
-  components: {
- ReImage
+  components: {CreateYourDesign
   }
 }
 </script>
