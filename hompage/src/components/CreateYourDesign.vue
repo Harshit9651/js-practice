@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div class="heading">
@@ -60,21 +59,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
+import { userCounterStore } from "@/stores/counter";
+import { storeToRefs } from "pinia";
+const counterStore = userCounterStore();
+const {count} = storeToRefs(counterStore)
 
 // Array of images
 const images = ref([
   {
-    label: 'Bedroom',
-    src: 'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600',
+    label: "Bedroom",
+    src: "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
-    label: 'Kitchen',
-    src: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600',
+    label: "Kitchen",
+    src: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
-    label: 'Bathroom',
-    src: 'https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600',
+    label: "Bathroom",
+    src: "https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   // Add more images as needed
 ]);
@@ -88,7 +91,7 @@ const selectImage = (index) => {
 };
 </script>
 <style lang="scss" scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
 * {
   margin: 0;
@@ -320,7 +323,12 @@ body {
 
     i {
       font-size: 20px;
-      background: linear-gradient(277.64deg, #4d8aff 8.32%, #f53f9e 51.79%, #ff9051 96.13%);
+      background: linear-gradient(
+        277.64deg,
+        #4d8aff 8.32%,
+        #f53f9e 51.79%,
+        #ff9051 96.13%
+      );
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -345,7 +353,12 @@ body {
 .generate-btn {
   margin-top: 11.5rem;
   padding: 10px 20px;
-  background: linear-gradient(277.64deg, #4d8aff 8.32%, #f53f9e 51.79%, #ff9051 96.13%);
+  background: linear-gradient(
+    277.64deg,
+    #4d8aff 8.32%,
+    #f53f9e 51.79%,
+    #ff9051 96.13%
+  );
   color: white;
   border: none;
   width: 242px;
@@ -354,7 +367,12 @@ body {
   cursor: pointer;
 
   &:hover {
-    background: linear-gradient(277.64deg, #3379fa 8.32%, #f53f9e 51.79%, #c56229 96.13%);
+    background: linear-gradient(
+      277.64deg,
+      #3379fa 8.32%,
+      #f53f9e 51.79%,
+      #c56229 96.13%
+    );
   }
 
   @media (max-width: 1024px) {
@@ -366,6 +384,4 @@ body {
     margin-top: 20px;
   }
 }
-
-
 </style>
