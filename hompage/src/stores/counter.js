@@ -1,12 +1,15 @@
-import {defineStore} from 'pinia'
-import {ref,computed} from 'vue'
-export const userCounterStore = defineStore( 'counter',()=>{
-    const count = ref(1);
-    const dublecount = computed(()=>{
-        function increment(){
-            count.value++;
+import { defineStore } from "pinia";
 
-        }
-        return {count,dublecount,increment}
-    })
-})
+export const userCounterStore = defineStore("counter", {
+  state: () => ({
+    count: 1,
+  }),
+
+  actions: {
+    increment() {
+      this.count++;
+    },
+  },
+});
+
+// we dont use ref in pinia store
