@@ -15,3 +15,6 @@ export const piniaStore = defineStore('counter',{
 })
 
 // we dont use ref in pinia store
+// state is like data
+// getters is like computed property (like some this changs in view or model then it will executed)
+// actions is just like function or we can say in optional api it is like methods
