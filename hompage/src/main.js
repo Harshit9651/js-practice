@@ -3,11 +3,13 @@ import { createPinia } from "pinia";
 import { createRouter, createWebHistory } from "vue-router";
 import HomePageWrapper from "./views/HomePageWrapper.vue";
 import ResultPage from "./components/ResultPage.vue";
+import SlidebarResult from "./components/SlidebarResult.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { name: "Homepage", component: HomePageWrapper, path: "/" },
-    {name:'ResultPage',component:ResultPage,path :"/result"}
+    {name:'ResultPage',component:ResultPage,path :"/result"},
+    {name:'SlidebarResult',component:SlidebarResult,path:'/slidbar'}
   ],
 });
 
