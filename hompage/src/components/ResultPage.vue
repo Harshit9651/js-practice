@@ -19,7 +19,6 @@
           </button>
         </div>
       </div>
-   
 
       <div class="cards">
         <div
@@ -28,13 +27,14 @@
           class="image-card"
           @click="handleClick(index)"
           :style="{
-    borderImageSource:
-      clickedIndex === index
-        ? 'linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%)'
-        : 'none',
-    borderWidth: clickedIndex === index ? '2px' : '1px',
-    borderStyle: 'solid'
-  }"
+            borderImage:
+              clickedIndex === index
+                ? 'linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%) 1'
+                : 'none',
+            borderWidth: clickedIndex === index ? '3px' : '1px',
+            borderStyle: 'solid',
+            borderRadius: '20px',
+          }"
         >
           <img
             :src="`https://images.pexels.com/photos/${
@@ -57,6 +57,9 @@
         </div>
       </div>
     </div>
+    <button class="top-right-button">
+      <i class="fa-solid fa-gear"></i> Setting
+    </button>
   </div>
 </template>
 
@@ -77,7 +80,6 @@ html,
 body {
   height: 100%;
   margin: 0;
-
 }
 
 * {
@@ -180,7 +182,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
         border-radius: 6px;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -256,6 +258,27 @@ body {
         text-decoration: underline;
       }
     }
+  }
+  .top-right-button {
+    position: absolute;
+    top: 10rem;
+    right: 0rem;
+    height: 44px;
+    width: 136px;
+    padding: 10px 20px;
+    border-radius: 100px 0px 0px 100px;
+    border: none;
+    background: linear-gradient(
+      277.64deg,
+      #4d8aff 8.32%,
+      #f53f9e 51.79%,
+      #ff9051 96.13%
+    );
+    color: white;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
   }
 }
 </style>
