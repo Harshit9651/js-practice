@@ -1,14 +1,14 @@
 <template>
-<CreateYourDesign></CreateYourDesign>
+<HomePage></HomePage>
 </template>
 
 <script>
 // import { createTextVNode } from 'vue';
-import CreateYourDesign from './components/CreateYourDesign.vue';
+import HomePage from './components/HomePage.vue';
 export default {
   name: 'App',
   components: {
-    CreateYourDesign
+   HomePage
   }
 }
 </script>
