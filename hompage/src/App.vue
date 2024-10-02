@@ -1,16 +1,11 @@
 <template>
-<HomePage></HomePage>
+<router-view></router-view>
 </template>
 
-<script>
-// import { createTextVNode } from 'vue';
-import HomePage from './components/HomePage.vue';
-export default {
-  name: 'App',
-  components: {
-   HomePage
-  }
-}
+<script setup>
+
+import { RouterView } from 'vue-router';
+
 </script>
 
 <style>
