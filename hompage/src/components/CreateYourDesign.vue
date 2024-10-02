@@ -58,37 +58,84 @@
   </div>
 </template>
 
+<!-- 
+<template>
+  <div>
+    <div class="heading">
+      <h1>Re-Imageine</h1>
+    </div>
+    <div class="container">
+      <div class="main-container">
+      
+        <div class="left">
+          <div class="left-up">
+            <img
+              class="left-img"
+              src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="living room"
+            />
+            <h3>living_room.jpg</h3>
+          </div>
+          <div class="left-down">
+            <p class="left-down-p">
+              <i class="fa-solid fa-trash"></i> Delete
+            </p>
+          </div>
+        </div>
+
+     
+        <div class="right">
+          <div class="output-setting">
+            <h3 id="min-heading">Output Setting</h3>
+            <hr class="solid-line" />
+            
+       
+            <label class="test-input" for="text-input">Text Input</label>
+            <input
+              type="text"
+              id="text-input"
+              class="input-field"
+              placeholder="Enter your desired design ..."
+            />
+
+            <label class="choose-style" for="choose-style">Choose Style</label>
+            <div class="image-carousel">
+              <div class="image-cards">
+                <div
+                  v-for="(image, index) in imageStore.images"
+                  :key="index"
+                  class="image-card"
+                  :class="{ active: imageStore.activeIndex === index }"
+                  @click="imageStore.selectImage(index)"
+                >
+                  <img :src="image.src" :alt="image.label" />
+                  <div class="label">{{ image.label }}</div>
+
+                 
+                  <div class="overlay" v-if="imageStore.activeIndex === index">
+                    <div class="outer-circle">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="generate-btn" >Generate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template> -->
+
 <script setup>
-import { ref } from "vue";
-import { userCounterStore } from "@/stores/counter";
-import { storeToRefs } from "pinia";
-const counterStore = userCounterStore();
-const {count} = storeToRefs(counterStore)
 
-// Array of images
-const images = ref([
-  {
-    label: "Bedroom",
-    src: "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    label: "Kitchen",
-    src: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  {
-    label: "Bathroom",
-    src: "https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600",
-  },
-  // Add more images as needed
-]);
-
-// Reactive variable to keep track of the active image
-const activeIndex = ref(null);
-
-// Method to handle the selection of an image
-const selectImage = (index) => {
-  activeIndex.value = index;
-};
+// import { useImageStore } from "@/stores/counter";
+// const imageStore = useImageStore();
+// const handleImageClick = (index) => {
+//   imageStore.selectImage(index); // Using the action to set active image
+// };
 </script>
 <style lang="scss" scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");

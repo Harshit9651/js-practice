@@ -7,7 +7,8 @@
 import CreateYourDesign from './components/CreateYourDesign.vue';
 export default {
   name: 'App',
-  components: {CreateYourDesign
+  components: {
+    CreateYourDesign
   }
 }
 </script>
