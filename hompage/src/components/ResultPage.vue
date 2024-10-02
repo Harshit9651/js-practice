@@ -19,24 +19,37 @@
           </button>
         </div>
       </div>
+   
+
       <div class="cards">
-        <div class="image-card">
+        <div
+          v-for="(image, index) in [1, 2, 3]"
+          :key="index"
+          class="image-card"
+          @click="handleClick(index)"
+          :style="{
+    borderImageSource:
+      clickedIndex === index
+        ? 'linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%)'
+        : 'none',
+    borderWidth: clickedIndex === index ? '2px' : '1px',
+    borderStyle: 'solid'
+  }"
+        >
           <img
-            src="https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=600"
+            :src="`https://images.pexels.com/photos/${
+              271624 + index
+            }/pexels-photo-${
+              271624 + index
+            }.jpeg?auto=compress&cs=tinysrgb&w=600`"
             alt="image-card"
           />
-        </div>
-        <div class="image-card">
-          <img
-            src="https://images.pexels.com/photos/1879061/pexels-photo-1879061.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="image-card"
-          />
-        </div>
-        <div class="image-card">
-          <img
-            src="https://images.pexels.com/photos/276671/pexels-photo-276671.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="image-card"
-          />
+          <div
+            class="overlay"
+            :style="{ opacity: clickedIndex === index ? 1 : 0 }"
+          >
+            <div class="outer-circle"><i class="fa-solid fa-check"></i></div>
+          </div>
         </div>
         <div class="image-card generate">
           <div class="circle"><i class="fa-solid fa-plus"></i></div>
@@ -47,7 +60,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const clickedIndex = ref(null);
+
+function handleClick(index) {
+  clickedIndex.value = index;
+}
+</script>
 
 <style lang="scss" scoped>
 @import "@fortawesome/fontawesome-free/css/all.css";
@@ -56,7 +77,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  background-color: blueviolet;
+
 }
 
 * {
@@ -64,15 +85,15 @@ body {
   padding: 0;
 }
 .wrapper {
-  background-color: rgb(227, 235, 235);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
 
   .main-container {
-    height: 721px;
+    height: 765px;
     width: 623px;
-    background-color: rgb(240, 234, 234);
+    background-color: rgb(249, 249, 249);
 
     .header {
       margin-top: 0.6rem;
@@ -143,12 +164,48 @@ body {
       padding: 1px;
       border: 1px solid rgb(197, 197, 205);
       border-radius: 6px;
-
+      position: relative;
       img {
         height: 107px;
         width: 140px;
         border-radius: 6px;
-        display: block; 
+        display: block;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .outer-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        color: white;
+        font-size: 20px;
+      }
+      .fa-check {
+        background: linear-gradient(
+          277.64deg,
+          #4d8aff 8.32%,
+          #f53f9e 51.79%,
+          #ff9051 96.13%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
@@ -169,7 +226,6 @@ body {
         1;
 
       .image-card {
-       
         border: 1px solid rgb(197, 197, 205);
         border-radius: 50%;
         overflow: hidden;
