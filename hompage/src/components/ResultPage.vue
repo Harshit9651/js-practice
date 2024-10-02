@@ -54,50 +54,7 @@ body {
       align-items: center;
       gap: 20px;
     }
-    // .card {
-    //   margin-top: 20px;
-    //   height: 536px;
-    //   width: 622px;
-    //   background-color: rgb(255, 255, 255);
-    //   border-radius: 10px;
-    //   display: flex;
-    //   flex-direction: column;
-
-    //   img {
-    //     padding: 10px;
-    //     height: 448px;
-    //     width: 598px;
-    //     border-radius: 20px;
-    //   }
-
-    //   .buttons{
-    //     display: flex; /* Use Flexbox for the buttons */
-    //     justify-content: space-around;
-    //     gap: 10px; /* Add space between the buttons */
-    //     width: 100%; /* Ensure buttons take the full width */
-    //     padding: 0 10px; /* Padding to keep buttons from touching the edges */
-    //     margin-top: 10px;
-    //     flex-wrap: wrap;
-    //     .button1{
-    //         height: 48px;
-    //         width: 390px;
-    //         border-radius: 53px;
-    //         border-color: none;
-    //         background: linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%);
-    //         color: white;
-    //         cursor: pointer;
-    //     }
-    //     .button2{
-    //        width: 192px;
-    //        height: 48px;
-    //        border: 2px;
-    //        border-radius: 100px;
-    //        background: rgb(235, 232, 232);
-    //        color: #000000;
-    //        cursor: pointer; 
-    //     }
-    //   }
-    // }
+   
     .card {
   margin-top: 20px;
   height: 536px;
