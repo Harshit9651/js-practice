@@ -97,8 +97,9 @@ body {
 
   .main-container {
     height: 765px;
+
     width: 623px;
-    background-color: rgb(202, 1, 1);
+    background-color: rgb(255, 255, 255);
 
     .header {
       margin-top: 0.6rem;
@@ -106,15 +107,13 @@ body {
       display: flex;
       align-items: center;
       gap: 20px;
-      
     }
 
     .card {
       margin-top: 20px;
-      height: 536px;
-    
+    height: 536px;
       width: 622px;
-      background-color: rgb(255, 255, 255);
+      background-color: hsl(0, 0%, 100%);
       box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       display: flex;
