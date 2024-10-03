@@ -77,6 +77,17 @@ import { useRouter } from "vue-router";
 import { ref } from "vue";
 const Router = useRouter();
 let isfile = ref(false);
+const images = ref([
+  { src: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', label: 'Bathroom' },
+  { src: 'https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Living' },
+  { src: 'https://images.pexels.com/photos/342800/pexels-photo-342800.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Dinig' },
+  { src: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Kitcehn' },
+  { src: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Modern' },
+  { src: 'https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'colorfull' },
+  { src: 'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Bohemian' },
+]);
+const activeIndex = ref(0); 
+
 function showfile() {
   const file = sessionStorage.getItem("uploadedImage");
   if (file) {
@@ -84,7 +95,9 @@ function showfile() {
   }
 }
 showfile();
-
+function selectImage(index) {
+  activeIndex.value = index; 
+}
 function Redricttootherpage() {
   Router.push("/result");
 }
@@ -106,6 +119,7 @@ body {
   margin-right: 55%;
   display: flex;
   justify-content: center;
+ 
 }
 
 .container {
@@ -260,10 +274,11 @@ font-size: 14px;
   margin-bottom: 10px;
 }
 
-.min-heading {
+#min-heading {
   color: #100724;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 30rem;
 }
 
 .test-input {
@@ -272,15 +287,17 @@ font-size: 14px;
   font-size: large;
   margin-top: 25px;
   margin-bottom: 10px;
+  margin-right: 31.5rem;
   display: block;
 }
 
 .chose-style {
   color: #100724;
-  font-weight: bold;
-  font-size: large;
+  font-weight: 500;
+  font-size: 1rem;
   margin-top: 25px;
   margin-bottom: 5px;
+  margin-right: 31.5rem;
   display: block;
 }
 
