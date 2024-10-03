@@ -37,14 +37,19 @@ const fileInput = ref(null);
 const triggerFileInput = () => {
   fileInput.value.click();
 };
-
 const handleFileUpload = (event) => {
   const file = event.target.files[0];
   if (file) {
-    console.log("Selected file:", file);
-Router.push('/createdesign')
+    const fileURL = URL.createObjectURL(file);
+    sessionStorage.setItem('uploadedImage', fileURL); 
+    console.log("Selected file:", file); 
+    console.log("File URL:", fileURL); 
+  } else {
+    console.log("No file selected."); 
   }
+  Router.push('/createdesign'); 
 };
+
 </script>
 
 <style lang="scss" scoped>

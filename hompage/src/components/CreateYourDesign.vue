@@ -6,7 +6,7 @@
     <div class="container">
       <div class="main-container">
         <div class="left">
-          <div class="left-up">
+          <div class="left-up" v-if="isfile">
             <img
               class="left-img"
               src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -14,8 +14,20 @@
             />
             <h3>living_room.jpg</h3>
           </div>
-          <div class="left-down">
+          <div class="left-down" v-if="isfile">
             <p class="left-down-p"><i class="fa-solid fa-trash"></i> Delete</p>
+          </div>
+
+          <div class="left-else" v-else>
+            <span @click="triggerFileInput" class="add-icon"
+              ><div class="else-main-circle">
+                <div class="else-circle">
+                  <i class="fa-solid fa-plus"></i>
+                </div></div
+            ></span>
+          <h4>Drag & Drop or copy paste the image </h4>
+          <br>
+          <p id="fonting">Suport formats : png or jpg</p>
           </div>
         </div>
 
@@ -50,7 +62,9 @@
                 </div>
               </div>
             </div>
-            <button @click="Redricttootherpage()" class="generate-btn">Generate</button>
+            <button @click="Redricttootherpage()" class="generate-btn">
+              Generate
+            </button>
           </div>
         </div>
       </div>
@@ -59,11 +73,20 @@
 </template>
 
 <script setup>
-import {useRouter} from 'vue-router'
-const Router =useRouter();
-function Redricttootherpage(){
-Router.push('/result')
+import { useRouter } from "vue-router";
+import { ref } from "vue";
+const Router = useRouter();
+let isfile = ref(false);
+function showfile() {
+  const file = sessionStorage.getItem("uploadedImage");
+  if (file) {
+    isfile = true;
+  }
+}
+showfile();
 
+function Redricttootherpage() {
+  Router.push("/result");
 }
 </script>
 <style lang="scss" scoped>
@@ -125,6 +148,49 @@ body {
 
   @media (max-width: 768px) {
     width: 100%;
+  }
+
+  .left-else {
+    height: 652px;
+    width: 364px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .else-main-circle {
+      height: 150px;
+      width: 150px;
+      background: #f5effe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      .else-circle {
+        height: 56px;
+        width: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: linear-gradient(
+          277.64deg,
+          #4d8aff 8.32%,
+          #f53f9e 51.79%,
+          #ff9051 96.13%
+        );
+        .fa-plus {
+          color: white;
+        }
+      }
+    }
+    #fonting{
+font-weight: 500;
+font-size: 14px;
+
+    }
   }
 }
 
