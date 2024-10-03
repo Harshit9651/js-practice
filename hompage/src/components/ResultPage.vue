@@ -57,14 +57,17 @@
         </div>
       </div>
     </div>
-    <button class="top-right-button">
+    <button @click="slidbarValue = true" class="top-right-button">
       <i class="fa-solid fa-gear"></i> Setting
     </button>
+    <SlidebarResult v-if="slidbarValue"></SlidebarResult>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import SlidebarResult from "./SlidebarResult.vue";
+const slidbarValue = ref(false);
 
 const clickedIndex = ref(null);
 
@@ -95,7 +98,7 @@ body {
   .main-container {
     height: 765px;
     width: 623px;
-    background-color: rgb(249, 249, 249);
+    background-color: rgb(202, 1, 1);
 
     .header {
       margin-top: 0.6rem;
@@ -103,16 +106,20 @@ body {
       display: flex;
       align-items: center;
       gap: 20px;
+      
     }
 
     .card {
       margin-top: 20px;
       height: 536px;
+    
       width: 622px;
       background-color: rgb(255, 255, 255);
+      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
+      height: 700px;
 
       img {
         padding: 10px;
@@ -161,6 +168,7 @@ body {
     display: flex;
     margin-top: 15px;
     gap: 20px;
+    // box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
 
     .image-card {
       padding: 1px;

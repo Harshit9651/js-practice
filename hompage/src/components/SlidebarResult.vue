@@ -35,6 +35,7 @@
         Upload Insperitation Image
       </div>
     </div>
+    <button class="hide-slidbar">click me </button>
   </div>
 </template>
 
@@ -188,9 +189,14 @@ function toggleCards() {
     justify-content: center;
     align-items: center;
     border: 2px solid;
-    border-image-source: linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%);
+    border-image-source: linear-gradient(
+      277.64deg,
+      #4d8aff 8.32%,
+      #f53f9e 51.79%,
+      #ff9051 96.13%
+    );
     border-image-slice: 1;
-    gap:10px;
+    gap: 10px;
     color: #ff5c00;
     border-radius: 50%;
 
@@ -205,5 +211,18 @@ function toggleCards() {
       align-items: center;
     }
   }
+  .hide-slidbar {
+  position: absolute;
+  top: 50%;
+  left: -70px;
+  transform: translateY(-50%);
+  background: #ff5c00;
+  color: white;
+  border-radius: 0 50px 50px 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 500;
+}
 }
 </style>
