@@ -5,7 +5,7 @@
         <i class="fa-solid fa-chevron-left"></i>
         <h1>Results</h1>
       </header>
-      <div class="card">
+      <div class="card ">
         <img
           src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="card_image"
@@ -118,7 +118,7 @@ body {
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-      height: 700px;
+     
 
       img {
         padding: 10px;
@@ -288,4 +288,5 @@ body {
     font-size: 14px;
   }
 }
+
 </style>
