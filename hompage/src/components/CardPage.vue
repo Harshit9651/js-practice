@@ -3,12 +3,13 @@
     <img :src="image" alt="Card Image" class="card-image" />
     <h2 class="card-title">{{ title }}</h2>
     <p class="card-description">{{ description }}</p>
-    <button class="reimage-button">{{ buttonText }}</button>
+    <button v-on:click="redricet()" class="reimage-button">{{ buttonText }}</button>
   </div>
 </template>
 
-<script>
+<script >
 import { defineComponent } from "vue";
+
 
 export default defineComponent({
   name: "CardComponent",
@@ -31,6 +32,14 @@ export default defineComponent({
     },
   },
 });
+
+</script>
+<script setup>
+import {useRouter} from 'vue-router'
+const Router = useRouter()
+function redricet(){
+Router.push('/Re-Image')
+}
 </script>
 
 <style lang="scss" scoped>

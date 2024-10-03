@@ -50,7 +50,7 @@
                 </div>
               </div>
             </div>
-            <button class="generate-btn">Generate</button>
+            <button @click="Redricttootherpage()" class="generate-btn">Generate</button>
           </div>
         </div>
       </div>
@@ -59,7 +59,12 @@
 </template>
 
 <script setup>
+import {useRouter} from 'vue-router'
+const Router =useRouter();
+function Redricttootherpage(){
+Router.push('/result')
 
+}
 </script>
 <style lang="scss" scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");

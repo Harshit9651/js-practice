@@ -51,10 +51,7 @@
       <h2>Transform Your Space with AI</h2>
       <div class="card-container">
   
-       <!-- <CardPage v-for="(card,index) in cards" :key="index"  :image="card.image"
-          :title="card.title"
-          :description="card.description"
-          :buttonText="card.buttonText"/> -->
+  
       
           <CardPage 
           v-for="(image, index) in imageStore.images" 
@@ -81,44 +78,6 @@ const showNav = ref(false);
 const toggleNavbar = () => {
   showNav.value = !showNav.value;
  };
-// const cards = ref([
-//   {
-//     image: 'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Beautiful Living Room',
-//     description: 'A cozy and stylish living room that makes you feel at home.',
-//     buttonText: 'Re-Imagine My Room',
-//   },
-//   {
-//     image: 'https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Elegant Bedroom',
-//     description: 'A serene and comfortable space to relax and unwind.',
-//     buttonText: 'Re-Imagine My Room',
-//   },
-//   {
-//     image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Modern Kitchen',
-//     description: 'A sleek and functional kitchen design for all your needs.',
-//     buttonText: 'Re-Imagine My Room',
-//   },
-//   {
-//     image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Chic Office Space',
-//     description: 'A stylish workspace that boosts creativity and productivity.',
-//     buttonText: 'Re-Imagine My Room',
-//   },
-//   {
-//     image: 'https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Chic Office Space',
-//     description: 'A stylish workspace that boosts creativity and productivity.',
-//     buttonText: 'Re-Imagine My Room',
-//   },
-//   {
-//     image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     title: 'Chic Office Space',
-//     description: 'A stylish workspace that boosts creativity and productivity.',
-//     buttonText: 'Re-Imagine My Room',
-//   }, 
-// ]);
 
 
 </script>
