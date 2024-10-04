@@ -40,6 +40,7 @@
   top: 0%;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
 
+
   .logo {
     margin-left: 2rem;
     display: flex;
