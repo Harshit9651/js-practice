@@ -79,13 +79,20 @@ const handleFileUpload = (event) => {
     #d47c7c45 97.56%
   );
   border-radius: 1rem;
-  // box-shadow: 5px 5px 5px 5px rgba(219, 135, 9, 0.3);
-  border: #d47c7c;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+    277.64deg,
+    rgba(40, 103, 220, 0.07) 8.32%,
+    rgba(245, 63, 158, 0.07) 51.79%,
+    rgba(255, 144, 81, 0.07) 96.13%
+  ) 3;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .overlay-box {
   width: 355px;

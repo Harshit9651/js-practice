@@ -5,7 +5,7 @@
         <i class="fa-solid fa-chevron-left"></i>
         <h1>Results</h1>
       </header>
-      <div class="card ">
+      <div class="card">
         <img
           src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="card_image"
@@ -114,14 +114,13 @@ body {
 
     .card {
       margin-top: 20px;
-    height: 536px;
+      height: 536px;
       width: 622px;
       background-color: hsl(0, 0%, 100%);
       box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-     
 
       img {
         padding: 10px;
@@ -170,13 +169,13 @@ body {
     display: flex;
     margin-top: 15px;
     gap: 20px;
-   
 
     .image-card {
-      padding: 1px;
+      // padding: 1px;
       border: 1px solid rgb(197, 197, 205);
-      border-radius: 6px;
+      // border-radius: 6px;
       position: relative;
+      background-color: #ffffff;
       img {
         height: 107px;
         width: 140px;
@@ -238,8 +237,8 @@ body {
         1;
 
       .image-card {
-        border: 1px solid rgb(197, 197, 205);
-        border-radius: 50%;
+        // border: 1px solid rgb(197, 197, 205);
+
         overflow: hidden;
       }
 
@@ -291,5 +290,4 @@ body {
     font-size: 14px;
   }
 }
-
 </style>
