@@ -5,7 +5,7 @@
       <div class="main-container">
         <div class="overlay-box">
           <div class="inner-box">
-            <div v-html="ImageStore.uploadBackgroundGrid"></div>
+            <!-- <div v-html="ImageStore.uploadBackgroundGrid"></div> -->
             <div class="outer-circle">
               <div class="inner-circle">
                 <span @click="triggerFileInput" class="plus-icon">+</span>
@@ -27,11 +27,11 @@
   </div>
 </template>
 <script setup>
-import { useImageStore } from "@/stores/counter";
+// import { useImageStore } from "@/stores/counter";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 const Router = useRouter();
-const ImageStore = useImageStore();
+// const ImageStore = useImageStore();
 const fileInput = ref(null);
 
 const triggerFileInput = () => {
