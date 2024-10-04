@@ -22,39 +22,12 @@
 
       <div class="cards">
         <div
-          v-for="(image, index) in [1, 2, 3]"
-          :key="index"
+          v-for="image in images"
+          :key="image"
           class="image-card"
-          @click="handleClick(index)"
-          :style="{
-            borderImage:
-              clickedIndex === index
-                ? 'linear-gradient(277.64deg, #4D8AFF 8.32%, #F53F9E 51.79%, #FF9051 96.13%) 1'
-                : 'none',
-            borderWidth: clickedIndex === index ? '3px' : '1px',
-            borderStyle: 'solid',
-            borderRadius: '20px',
-          }"
-        >
-          <img
-            :src="`https://images.pexels.com/photos/${
-              271624 + index
-            }/pexels-photo-${
-              271624 + index
-            }.jpeg?auto=compress&cs=tinysrgb&w=600`"
-            alt="image-card"
-          />
-          <div
-            class="overlay"
-            :style="{ opacity: clickedIndex === index ? 1 : 0 }"
-          >
-            <div class="outer-circle"><i class="fa-solid fa-check"></i></div>
-          </div>
-        </div>
-        <div class="image-card generate">
-          <div class="circle"><i class="fa-solid fa-plus"></i></div>
-          <a href="">Generate-more</a>
-        </div>
+          :class="{ selected: selectedImage === image.id }"
+          @click="handleClick(image.id)"
+        ><img :src="image.src"></div>
       </div>
     </div>
     <button @click="toggleSidebar" class="top-right-button">
@@ -69,10 +42,16 @@ import { ref } from "vue";
 import SlidebarResult from "./SlidebarResult.vue";
 const slidbarValue = ref(false);
 
-const clickedIndex = ref(null);
+const images = [
+  { src: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600", id: 1 },
+  { src: "https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=600", id: 2 },
+  { src: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600", id: 3 },
+];
+const selectedImage = ref(null);
+// const clickedIndex = ref(null);
 
-function handleClick(index) {
-  clickedIndex.value = index;
+function handleClick(id) {
+  selectedImage.value = id;
 }
 function toggleSidebar() {
   slidbarValue.value = !slidbarValue.value;
@@ -172,10 +151,13 @@ body {
 
     .image-card {
       // padding: 1px;
-      border: 1px solid rgb(197, 197, 205);
-      // border-radius: 6px;
+      border-radius: 6px;
       position: relative;
       background-color: #ffffff;
+      &.selected {
+        border: 2px solid red;
+        padding: 0.134rem;
+      }
       img {
         height: 107px;
         width: 140px;
