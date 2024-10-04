@@ -6,6 +6,7 @@ import ResultPage from "./components/ResultPage.vue";
 import CreateYourDesign from "./components/CreateYourDesign.vue";
 import ReImage from "./components/ReImage.vue";
 import CustimizePage from "./components/CustimizePage.vue";
+import NavbarPage from "./components/NavbarPage.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -13,7 +14,8 @@ const router = createRouter({
     {name:'ResultPage',component:ResultPage,path :"/result"},
     {name:'CreateYourDesign', component:CreateYourDesign,path:'/createdesign'},
     {name:'ReImage' ,component:ReImage,path:'/Re-Image'},
-    {name:'CustimizePage', component:CustimizePage,path: '/custimize-page'}
+    {name:'CustimizePage', component:CustimizePage,path: '/custimize-page'},
+    {name:'navbarPage',component:NavbarPage,path:'/Nav'}
   ],
 });
 
