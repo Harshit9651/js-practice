@@ -3,12 +3,12 @@
     <h1 class="heading">Re-Imagine</h1>
     <div class="container">
       <div class="main-container">
-        <div class="child-container"></div>
         <div class="overlay-box">
           <div class="inner-box">
+            <div v-html="ImageStore.uploadBackgroundGrid"></div>
             <div class="outer-circle">
               <div class="inner-circle">
-                <span  @click="triggerFileInput" class="plus-icon">+</span>
+                <span @click="triggerFileInput" class="plus-icon">+</span>
               </div>
             </div>
             <h2>Drag and drop or copy paste the image</h2>
@@ -27,11 +27,11 @@
   </div>
 </template>
 <script setup>
-import{useRouter} from 'vue-router'
+import { useImageStore } from "@/stores/counter";
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 const Router = useRouter();
-
-
+const ImageStore = useImageStore();
 const fileInput = ref(null);
 
 const triggerFileInput = () => {
@@ -41,15 +41,14 @@ const handleFileUpload = (event) => {
   const file = event.target.files[0];
   if (file) {
     const fileURL = URL.createObjectURL(file);
-    sessionStorage.setItem('uploadedImage', fileURL); 
-    console.log("Selected file:", file); 
-    console.log("File URL:", fileURL); 
+    sessionStorage.setItem("uploadedImage", fileURL);
+    console.log("Selected file:", file);
+    console.log("File URL:", fileURL);
   } else {
-    console.log("No file selected."); 
+    console.log("No file selected.");
   }
-  Router.push('/createdesign'); 
+  Router.push("/createdesign");
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -74,13 +73,13 @@ const handleFileUpload = (event) => {
   height: 560px;
   background: linear-gradient(
     42.57deg,
-    #765e5e -1.78%,
-    #f89090 41.93%,
-    #f8b789 71.73%,
-    #d47c7c 97.56%
+    #765e5e51 -1.78%,
+    #f890905c 41.93%,
+    #f8b7895d 71.73%,
+    #d47c7c45 97.56%
   );
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px 5px rgba(219, 135, 9, 0.3);
+  // box-shadow: 5px 5px 5px 5px rgba(219, 135, 9, 0.3);
   border: #d47c7c;
   position: relative;
   display: flex;

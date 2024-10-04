@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <button @click="slidbarValue = true" class="top-right-button">
+    <button @click="toggleSidebar" class="top-right-button">
       <i class="fa-solid fa-gear"></i> Setting
     </button>
     <SlidebarResult v-if="slidbarValue"></SlidebarResult>
@@ -73,6 +73,9 @@ const clickedIndex = ref(null);
 
 function handleClick(index) {
   clickedIndex.value = index;
+}
+function toggleSidebar() {
+  slidbarValue.value = !slidbarValue.value;
 }
 </script>
 
@@ -167,7 +170,7 @@ body {
     display: flex;
     margin-top: 15px;
     gap: 20px;
-    // box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+   
 
     .image-card {
       padding: 1px;

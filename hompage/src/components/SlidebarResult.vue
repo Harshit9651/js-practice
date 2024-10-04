@@ -1,41 +1,47 @@
 <template>
   <div class="main">
-    <div class="sidebar">
-      <div class="header">
-        <h2>Output Settings</h2>
-      </div>
-      <div class="br-tag">
-        <hr />
-      </div>
-      <div class="text-input">
-        <label class="input-label" for="">Text Input</label>
-        <input class="input-input" type="text" />
-      </div>
-      <div class="br-tag">
-        <hr />
-      </div>
-      <div class="styles">
-        <h3>Styles</h3>
-        <div class="circle" @click="toggleCards">
-          <i :class="showCards ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i>
+    <div class="slidbar-wrapper">
+      <div class="sidebar" v-if="showme">
+        <div class="header">
+          <h2>Output Settings</h2>
         </div>
-      </div>
+        <div class="br-tag">
+          <hr />
+        </div>
+        <div class="text-input">
+          <label class="input-label" for="">Text Input</label>
+          <input class="input-input" type="text" />
+        </div>
+        <div class="br-tag">
+          <hr />
+        </div>
+        <div class="styles">
+          <h3>Styles</h3>
+          <div class="circle" @click="toggleCards">
+            <i
+              :class="showCards ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"
+            ></i>
+          </div>
+        </div>
 
-      <div v-if="showCards" class="cards">
-        <div class="card" v-for="(card, index) in cards" :key="index">
-          <img :src="card.image" alt="Image" class="card-image" />
+        <div v-if="showCards" class="cards">
+          <div class="card" v-for="(card, index) in cards" :key="index">
+            <img :src="card.image" alt="Image" class="card-image" />
+          </div>
         </div>
-      </div>
-      <div class="content">
-        <h4>Insperitation Image</h4>
-        <p>Lorem ipsum dolor, sit amet consectetur.</p>
-      </div>
-      <div class="add-data">
-        <div class="add-data-circle"><i class="fa-solid fa-plus"></i></div>
-        Upload Insperitation Image
+        <div class="content">
+          <h4>Insperitation Image</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        </div>
+        <div class="add-data">
+          <div class="add-data-circle"><i class="fa-solid fa-plus"></i></div>
+          Upload Insperitation Image
+        </div>
+        <button @click="toggleSidebar" class="hide-slidbar">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
-    <button class="hide-slidbar">click me </button>
   </div>
 </template>
 
@@ -43,6 +49,7 @@
 import { ref } from "vue";
 
 const showCards = ref(false);
+const showme = ref(true)
 
 const cards = ref([
   {
@@ -80,6 +87,9 @@ const cards = ref([
 function toggleCards() {
   showCards.value = !showCards.value;
 }
+function toggleSidebar() {
+  showme.value = !showme.value;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -91,6 +101,7 @@ function toggleCards() {
 .main {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
 .sidebar {
@@ -212,18 +223,23 @@ function toggleCards() {
     }
   }
   .hide-slidbar {
-  position: absolute;
-  top: 50%;
-  left: -70px;
-  transform: translateY(-50%);
-  background: #ff5c00;
-  color: white;
-  border-radius: 0 50px 50px 0;
-  padding: 10px 20px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 500;
-}
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    background: linear-gradient(
+      82.26deg,
+      #4d8aff -8.24%,
+      #f53f9e 44.4%,
+      #ff9051 98.1%
+    );
 
+    color: white;
+    left: -3rem;
+    border-radius: 3.125rem 0px 0px 3.125rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 500;
+    border: none;
+  }
 }
 </style>
