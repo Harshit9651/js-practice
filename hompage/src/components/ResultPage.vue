@@ -155,8 +155,15 @@ body {
       position: relative;
       background-color: #ffffff;
       &.selected {
-        border: 2px solid red;
+        // border: 2px solid red;
         padding: 0.134rem;
+        background: linear-gradient(
+          277.64deg,
+          #4d8aff 8.32%,
+          #f53f9e 51.79%,
+          #ff9051 96.13%
+        );
+
       }
       img {
         height: 107px;

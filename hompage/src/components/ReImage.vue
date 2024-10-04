@@ -72,6 +72,7 @@ const handleFileDrop = (event) => {
     const fileURL = URL.createObjectURL(file);
     sessionStorage.setItem('uploadedImage', fileURL);
     console.log('Dropped file:', file);
+    alert('dear user file Drag successfully')
     console.log('File URL:', fileURL);
     Router.push('/createdesign');
   } else {

@@ -5,33 +5,35 @@
         <div class="ai-tools"><h3>AI editor tools</h3></div>
         <div class="hr-tag"><hr /></div>
         <div class="cards">
-          <div class="card">
-            <h4>replace products</h4>
+          <div v-for="card in cardData" :key="card.id" class="card" :class="{ selected:selectCard===card.id}" @click="handelClick(card.id)">
+            <i :class="card.iconClass"></i>
+            <h4>{{ card.text }}</h4>
           </div>
-
-          <div class="card">
-            <h4>replace products</h4>
-          </div>
-          <div class="card">
-            <h4>replace products</h4>
-          </div>
-          <div class="card">
-            <h4>replace products</h4>
-          </div>
-          <div class="card">
-            <h4>replace products</h4>
-          </div>
-          <div class="card">
-            <h4>replace products</h4>
-          </div>
-      
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import{ref} from 'vue'
+const cardData = [
+  { iconClass: "fa-solid fa-rotate", text: "replace products", id: 1 },
+  { iconClass: "fa-solid fa-plus", text: "add products", id: 2 },
+  { iconClass: "fa-solid fa-circle-right", text: "Move products", id: 3 },
+  { iconClass: "fa-solid fa-ribbon", text: "Change Wall/floor", id: 4 },
+  { iconClass: "fa-solid fa-store", text: "Room styles", id: 5 },
+  { iconClass: "fa-solid fa-ban", text: "Remove Objects", id: 6 },
+];
+const selectCard = ref(null);
+function handelClick(id){
+  selectCard.value = id
+  console.log(`seletct card value is ${selectCard.value}`)
+  alert('yes')
+}
+</script>
 <style lang="scss" scoped>
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -74,11 +76,15 @@
         // position: relative;
         height: 7.25rem;
         width: 9.25rem;
-        // background-color: aqua;
         box-shadow: -1px 0 3px rgba(0, 0, 0, 0.1);
-
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+       
       }
+
     }
   }
 }
