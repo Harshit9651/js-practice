@@ -146,12 +146,15 @@
   .profile{
     height: 2.5rem;
     width: 2.5rem;
-    border:2px solid whitesmoke;
+    margin-top: 1rem;
+    margin-left:1rem;
+    border:2px solid rgb(216, 211, 211);
     border-radius: 50%;
     background-color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center ;
+
 
     
   }
