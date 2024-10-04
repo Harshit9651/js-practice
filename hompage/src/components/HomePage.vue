@@ -162,7 +162,7 @@ const toggleNavbar = () => {
   }
   &:hover {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2), 0 0 20px 10px rgba(0, 0, 0, 0.1), 
-                0 0 30px 15px #bd3bfa; // Shadow with gradient colors
+                0 0 30px 15px #bd3bfa; 
   }
 }
 
