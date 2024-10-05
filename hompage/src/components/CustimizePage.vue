@@ -23,6 +23,8 @@ const cardData = [
   { iconClass: "fa-solid fa-ribbon", text: "Change Wall/floor", id: 4 },
   { iconClass: "fa-solid fa-store", text: "Room styles", id: 5 },
   { iconClass: "fa-solid fa-ban", text: "Remove Objects", id: 6 },
+  { iconClass: "fa-solid fa-ban", text: "Remove Objects", id: 6 },
+
 ];
 const selectCard = ref(null);
 function handelClick(id){
