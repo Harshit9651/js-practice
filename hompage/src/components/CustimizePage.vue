@@ -16,12 +16,29 @@
             <h4 :style="{ color: selectCard === card.id ? 'red' : 'black' }">
               {{ card.text }}
             </h4>
-        
+
             <i
               v-if="selectCard === card.id"
               class="fa-solid fa-check icon-right"
             ></i>
           </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="heading-left_content">
+          <div class="nav-left">
+            <p>home</p>
+            <i></i>
+            <p>Re-Image</p>
+          </div>
+          <h1>Custimize</h1>
+        </div>
+        <div class="heading-right_content">
+          <h1>jdhdh</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+            laudantium.
+          </p>
         </div>
       </div>
     </div>
@@ -56,7 +73,7 @@ function handleClick(id) {
   padding: 0;
 }
 .main-container {
-  margin-top: 10rem;
+  margin-top: 4.7rem;
   background-color: rgb(255, 255, 255);
   top: 0%;
   height: 100vh;
@@ -107,9 +124,8 @@ function handleClick(id) {
         border: 0.2rem solid transparent;
 
         &.selected {
-        
           color: black;
-          border-radius: .3rem;
+          border-radius: 0.3rem;
 
           box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1),
             0 0 20px 5px rgba(0, 0, 0, 0.1), 0 0 30px 0 rgba(77, 138, 255, 0.5),
@@ -126,12 +142,40 @@ function handleClick(id) {
           position: absolute;
           top: 5px;
           // right: 5px;
-          right: 0px;;
+          right: 0px;
           color: green;
           font-size: 1.2rem;
           background-color: aqua;
         }
       }
+    }
+  }
+  .main-content {
+    height: 100vh;
+    width: 30rem;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: 22%;
+    width: calc(100% - 22%);
+    margin-top: 0%;
+    display: flex;
+    justify-content: space-between;
+
+    .heading-left_content {
+      // height: 3rem;
+      width: 14.5rem;
+      background-color: rgb(255, 255, 255);
+      .nav-left {
+        display: flex;
+        margin-left: 10%;
+        gap: 0.5rem;
+      }
+    }
+    .heading-right_content {
+      height: 30%;
+      display: flex;
+      justify-content: space-between;
+      background-color: crimson;
     }
   }
 }
