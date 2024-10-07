@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="main-content">
-        <div class="heading-left_content">
+     <div class="nav-bar">   <div class="heading-left_content">
           <div class="nav-left">
             <p>home</p>
             <i></i>
@@ -34,12 +34,12 @@
           <h1>Custimize</h1>
         </div>
         <div class="heading-right_content">
-          <h1>jdhdh</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-            laudantium.
-          </p>
-        </div>
+          <div class="circle"><i class="fa-solid fa-arrow-left-long"></i></div>
+          <div class="circle"><i class="fa-solid fa-arrow-right-long"></i></div>
+          <div class="divider"></div>
+          <div class="circle"><i class="fa-solid fa-download"></i></div>
+        </div></div>
+        <div class="main-card"></div>
       </div>
     </div>
   </div>
@@ -150,33 +150,71 @@ function handleClick(id) {
       }
     }
   }
-  .main-content {
-    height: 100vh;
-    width: 30rem;
-    background-color: rgb(255, 255, 255);
-    margin-left: auto;
-    margin-right: 22%;
-    width: calc(100% - 22%);
-    margin-top: 0%;
+
+.main-content {
+  height: 100vh;
+  width: calc(100% - 22%);
+  margin-left: auto;
+  margin-right: 22%;
+  margin-top: 0%;
+  
+  .nav-bar,
+  .main-card {
+    width: 51.5rem; // Setting same width for both nav-bar and main-card
+    margin-left: auto; // Aligning both elements to center based on container
+    margin-right: auto;
+  }
+  
+  .nav-bar {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 1rem; // Adding space between nav-bar and main-card
 
     .heading-left_content {
-      // height: 3rem;
       width: 14.5rem;
       background-color: rgb(255, 255, 255);
+      
       .nav-left {
         display: flex;
-        margin-left: 10%;
+        margin-left: 5%;
         gap: 0.5rem;
       }
     }
+    
     .heading-right_content {
-      height: 30%;
+      margin: 10px;
+      height: 10%;
       display: flex;
       justify-content: space-between;
-      background-color: crimson;
+      background-color: rgb(255, 255, 255);
+      gap: 0.5rem;
+      
+      .circle {
+        height: 3.125rem;
+        width: 3.125rem;
+        border-radius: 50%;
+        background-color: rgb(247, 245, 241);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .divider {
+        margin-top: 0.2rem;
+        margin-left: 0.5rem;
+        width: 3px;
+        height: 40px;
+        background-color: #f7f2f2;
+      }
     }
   }
+
+  .main-card {
+    height: 35rem;
+    background-color: pink;
+  }
+}
+
 }
 </style>
