@@ -25,21 +25,40 @@
         </div>
       </div>
       <div class="main-content">
-     <div class="nav-bar">   <div class="heading-left_content">
-          <div class="nav-left">
-            <p>home</p>
-            <i></i>
-            <p>Re-Image</p>
+        <div class="nav-bar">
+          <div class="heading-left_content">
+            <div class="nav-left">
+              <p>home</p>
+              <i class="fa-solid fa-chevron-right"></i>
+              <p>Re-Image</p>
+            </div>
+           <div class="cus"> <h1>Custimize</h1></div>
           </div>
-          <h1>Custimize</h1>
+          <div class="heading-right_content">
+            <div class="circle">
+              <i class="fa-solid fa-arrow-left-long"></i>
+             
+            </div>
+            <div class="circle">
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+            <div class="divider"></div>
+            <div class="circle"><i class="fa-solid fa-download"></i></div>
+          </div>
         </div>
-        <div class="heading-right_content">
-          <div class="circle"><i class="fa-solid fa-arrow-left-long"></i></div>
-          <div class="circle"><i class="fa-solid fa-arrow-right-long"></i></div>
-          <div class="divider"></div>
-          <div class="circle"><i class="fa-solid fa-download"></i></div>
-        </div></div>
-        <div class="main-card"></div>
+        <div class="main-card">
+          <img
+            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Description of image"
+            class="main-card-image"
+          />
+        </div>
+        <div class="bottom-comp">
+          <div class="circle" ><i class="fa-solid fa-plus"></i>
+       </div>
+          <div class="circle" ><i class="fa-solid fa-minus"></i>
+           </div>
+        </div>
       </div>
     </div>
   </div>
@@ -59,10 +78,7 @@ const cardData = [
 
 const selectCard = ref(null);
 
-function handleClick(id) {
-  selectCard.value = id;
-  console.log(`Selected card ID is ${selectCard.value}`);
-}
+
 </script>
 
 <style lang="scss" scoped>
@@ -151,70 +167,108 @@ function handleClick(id) {
     }
   }
 
-.main-content {
-  height: 100vh;
-  width: calc(100% - 22%);
-  margin-left: auto;
-  margin-right: 22%;
-  margin-top: 0%;
-  
-  .nav-bar,
-  .main-card {
-    width: 51.5rem; // Setting same width for both nav-bar and main-card
-    margin-left: auto; // Aligning both elements to center based on container
-    margin-right: auto;
-  }
-  
-  .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 1rem; // Adding space between nav-bar and main-card
+  .main-content {
+    height: 100vh;
+    width: calc(100% - 22%);
+    margin-left: auto;
+    margin-right: 22%;
+    margin-top: 0%;
 
-    .heading-left_content {
-      width: 14.5rem;
-      background-color: rgb(255, 255, 255);
-      
-      .nav-left {
-        display: flex;
-        margin-left: 5%;
-        gap: 0.5rem;
-      }
+    .nav-bar,
+    .main-card {
+      width: 51.5rem; 
+      margin-left: auto; 
+      margin-right: auto;
     }
-    
-    .heading-right_content {
-      margin: 10px;
-      height: 10%;
+
+    .nav-bar {
       display: flex;
       justify-content: space-between;
       background-color: rgb(255, 255, 255);
-      gap: 0.5rem;
-      
-      .circle {
-        height: 3.125rem;
-        width: 3.125rem;
-        border-radius: 50%;
-        background-color: rgb(247, 245, 241);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      margin-bottom: 1rem; 
+
+      .heading-left_content {
+        width: 14.5rem;
+        background-color: rgb(255, 255, 255);
+
+        .nav-left {
+          display: flex;
+          margin-left: 5%;
+          gap: 0.5rem;
+        }
+        .cus{
+          display: flex;
+          background-color: rgb(255, 255, 255);
+          margin-left: 10px;
+        }
       }
-      
-      .divider {
-        margin-top: 0.2rem;
-        margin-left: 0.5rem;
-        width: 3px;
-        height: 40px;
-        background-color: #f7f2f2;
+
+      .heading-right_content {
+        margin: 10px;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(255, 255, 255);
+        gap: 0.5rem;
+
+        .circle {
+          height: 3.125rem;
+          width: 3.125rem;
+          border-radius: 50%;
+          background-color: rgb(255, 255, 255);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .divider {
+          margin-top: 0.2rem;
+          margin-left: 0.5rem;
+          width: 3px;
+          height: 40px;
+          background-color: #ffffff;
+          box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+          
+        }
       }
     }
-  }
 
-  .main-card {
-    height: 35rem;
-    background-color: pink;
-  }
-}
+    .main-card {
+      height: 35rem;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+      .main-card-image {
+        padding: 10px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 1.5rem;
+        width: 51rem;
+      }
+    }
+    .bottom-comp{
+      display: flex;
+      background-color: rgb(255, 255, 255);
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      .circle{
+        height: 3.125rem;
+          width: 3.125rem;
+          border-radius: 50%;
+          background-color: rgb(255, 255, 255);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+      }
+  
+    }
 
+  }
 }
 </style>
