@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div class="main-container">
@@ -17,7 +16,7 @@
             <h4 :style="{ color: selectCard === card.id ? 'red' : 'black' }">
               {{ card.text }}
             </h4>
-            <!-- Right corner icon will be shown when card is selected -->
+        
             <i
               v-if="selectCard === card.id"
               class="fa-solid fa-check icon-right"
@@ -105,20 +104,17 @@ function handleClick(id) {
         cursor: pointer;
 
         border-radius: 0.3rem;
-         border: 0.2rem solid transparent;
+        border: 0.2rem solid transparent;
 
         &.selected {
-          border: 0.2rem solid;
-          border-image: linear-gradient(
-            277.64deg,
-            #4d8aff 8.32%,
-            #f53f9e 51.79%,
-            #ff9051 96.13%
-          );
-          border-image-slice: 1;
-          background-color: white;
+        
           color: black;
-          border-radius: 1rem;
+          border-radius: .3rem;
+
+          box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1),
+            0 0 20px 5px rgba(0, 0, 0, 0.1), 0 0 30px 0 rgba(77, 138, 255, 0.5),
+            0 0 40px 0 rgba(245, 63, 158, 0.5),
+            0 0 50px 0 rgba(255, 144, 81, 0.5);
         }
 
         h4 {
@@ -129,9 +125,11 @@ function handleClick(id) {
         .icon-right {
           position: absolute;
           top: 5px;
-          right: 5px;
+          // right: 5px;
+          right: 0px;;
           color: green;
           font-size: 1.2rem;
+          background-color: aqua;
         }
       }
     }
