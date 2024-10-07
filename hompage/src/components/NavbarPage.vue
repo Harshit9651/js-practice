@@ -32,6 +32,7 @@
 }
 
 .navbar {
+  position: fixed;
   display: flex;
   background-color: rgb(255, 255, 255);
   position: fixed;
@@ -39,7 +40,7 @@
   width: 100%;
   top: 0%;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
-
+  z-index: 1000;
 
   .logo {
     margin-left: 2rem;
