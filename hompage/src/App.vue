@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!-- <NavbarPage></NavbarPage> -->
+    <NavbarPage></NavbarPage>
     <router-view></router-view>
   </div>
 </template>
 
 <script setup>
 
-// import NavbarPage from './components/NavbarPage.vue';
+import NavbarPage from './components/NavbarPage.vue';
 </script>
 
 <style>

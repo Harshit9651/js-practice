@@ -83,6 +83,7 @@ const handleFileDrop = (event) => {
 
 <style lang="scss" scoped>
 .container {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +96,7 @@ const handleFileDrop = (event) => {
   font-size: 20px;
   margin-right: 58%;
   line-height: 24px;
-  margin-top: 20px;
+  margin-top: 6rem;
 }
 
 .main-container {

@@ -115,7 +115,7 @@ body {
 }
 
 .heading {
-  margin-top: 2rem;
+  margin-top: 6rem;
   margin-right: 55%;
   display: flex;
   justify-content: center;
