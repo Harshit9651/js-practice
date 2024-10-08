@@ -32,12 +32,11 @@
               <i class="fa-solid fa-chevron-right"></i>
               <p>Re-Image</p>
             </div>
-           <div class="cus"> <h1>Custimize</h1></div>
+            <div class="cus"><h1>Custimize</h1></div>
           </div>
           <div class="heading-right_content">
             <div class="circle">
               <i class="fa-solid fa-arrow-left-long"></i>
-             
             </div>
             <div class="circle">
               <i class="fa-solid fa-arrow-right-long"></i>
@@ -54,13 +53,15 @@
           />
         </div>
         <div class="bottom-comp">
-          <div class="circle" ><i class="fa-solid fa-plus"></i>
-       </div>
-          <div class="circle" ><i class="fa-solid fa-minus"></i>
-           </div>
+          <div class="circle"><i class="fa-solid fa-plus"></i></div>
+          <div class="circle"><i class="fa-solid fa-minus"></i></div>
         </div>
-        <div class="buttons-part">
-          <button class="outer-button"><button class="inner-button"></button></button>
+        <div class="button-outer">
+          d
+          <div class="button-main-div">
+            <div class="left-div">hii</div>
+            <div class="right-div">by</div>
+          </div>
         </div>
       </div>
     </div>
@@ -81,10 +82,9 @@ const cardData = [
 
 const selectCard = ref(null);
 
-function handleClick(id){
-  selectCard.value = id
+function handleClick(id) {
+  selectCard.value = id;
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -182,8 +182,8 @@ function handleClick(id){
 
     .nav-bar,
     .main-card {
-      width: 51.5rem; 
-      margin-left: auto; 
+      width: 51.5rem;
+      margin-left: auto;
       margin-right: auto;
     }
 
@@ -191,7 +191,7 @@ function handleClick(id){
       display: flex;
       justify-content: space-between;
       background-color: rgb(255, 255, 255);
-      margin-bottom: 1rem; 
+      margin-bottom: 1rem;
 
       .heading-left_content {
         width: 14.5rem;
@@ -202,7 +202,7 @@ function handleClick(id){
           margin-left: 5%;
           gap: 0.5rem;
         }
-        .cus{
+        .cus {
           display: flex;
           background-color: rgb(255, 255, 255);
           margin-left: 10px;
@@ -235,7 +235,6 @@ function handleClick(id){
           height: 40px;
           background-color: #ffffff;
           box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
-          
         }
       }
     }
@@ -256,25 +255,49 @@ function handleClick(id){
         width: 51rem;
       }
     }
-    .bottom-comp{
+    .bottom-comp {
       display: flex;
       background-color: rgb(255, 255, 255);
       justify-content: center;
       align-items: center;
       gap: 1.5rem;
-      .circle{
+      .circle {
         height: 3.125rem;
-          width: 3.125rem;
-          border-radius: 50%;
-          background-color: rgb(255, 255, 255);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+        width: 3.125rem;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
       }
-  
     }
-
+    .button-outer {
+      display: flex;
+      background-color: rgb(148, 53, 53);
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      .button-main-div {
+        margin-bottom: 30%;
+        height: 4.5rem;
+        width: 20rem;
+        background-color: aquamarine;
+        border-radius: 3.75rem;
+        .left-div {
+          width: 8rem;
+          height: 3.5rem;
+          border-radius: 30%;
+          background-color: bisque;
+        }
+        .right-div {
+          width: 8rem;
+          height: 3.5rem;
+          border-radius: 30%;
+          background-color: pink;
+        }
+      }
+    }
   }
 }
 </style>
