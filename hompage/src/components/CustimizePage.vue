@@ -59,6 +59,9 @@
           <div class="circle" ><i class="fa-solid fa-minus"></i>
            </div>
         </div>
+        <div class="buttons-part">
+          <button class="outer-button"><button class="inner-button"></button></button>
+        </div>
       </div>
     </div>
   </div>
@@ -78,6 +81,9 @@ const cardData = [
 
 const selectCard = ref(null);
 
+function handleClick(id){
+  selectCard.value = id
+}
 
 </script>
 
