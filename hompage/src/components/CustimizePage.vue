@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-container">
-      <div class="slidbar">
+      <div v-if="slidbar" class="slidbar main-slaidbar">
         <div class="ai-tools"><h3>AI editor tools</h3></div>
         <div class="hr-tag"><hr /></div>
         <div class="cards">
@@ -21,6 +21,25 @@
               v-if="selectCard === card.id"
               class="fa-solid fa-check icon-right"
             ></i>
+          </div>
+        </div>
+      </div>
+      <div class="click-slidbar">
+        <div class="add-p">
+          <h2><span> </span> add products</h2>
+        </div>
+        <div class="hr-tag"><hr /></div>
+        <div class="input">
+          <input
+            type="text"
+            class="inputdata"
+            placeholder="search for products"
+          />
+        </div>
+        <div class="upload">
+          <div class="inner-div">
+            <div class="circle"><i class="fa-solid fa-plus"></i></div>
+            Upload
           </div>
         </div>
       </div>
@@ -56,13 +75,6 @@
           <div class="circle"><i class="fa-solid fa-plus"></i></div>
           <div class="circle"><i class="fa-solid fa-minus"></i></div>
         </div>
-        <div class="button-outer">
-          d
-          <div class="button-main-div">
-            <div class="left-div">hii</div>
-            <div class="right-div">by</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -81,6 +93,7 @@ const cardData = [
 ];
 
 const selectCard = ref(null);
+let slidbar = ref(false);
 
 function handleClick(id) {
   selectCard.value = id;
@@ -148,8 +161,8 @@ function handleClick(id) {
         &.selected {
           color: black;
           border-radius: 0.3rem;
-          box-shadow: -5px 2px 20px 0px rgba(128, 0, 128, 0.4); /* Left side purple shadow */
-          // -2px 2px 20px 0px rgba(255, 165, 0, 0.4);   /* Right side orange shadow */
+          box-shadow: -5px 2px 20px 0px rgba(128, 0, 128, 0.4);
+          // -2px 2px 20px 0px rgba(255, 165, 0, 0.4);
           border: 2px solid #ff7f50;
           transition: box-shadow 0.3s ease-in-out;
         }
@@ -166,12 +179,80 @@ function handleClick(id) {
           right: 0px;
           color: green;
           font-size: 1.2rem;
-          background-color: aqua;
         }
       }
     }
   }
+  .click-slidbar {
+    margin-top: 4rem;
+    top: 1%;
+    right: 0%;
+    width: 22%;
+    position: fixed;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    .add-p {
+      background-color: #ffffff;
+      margin-top: 1.3rem;
+      display: flex;
+      margin-left: 1rem;
+    }
+    .hr-tag {
+      margin-top: 1rem;
+      width: 100%;
+      border: 2px transparent;
+      color: #f0ebeb;
+    }
+    .input {
+      background-color: #ffffff;
+      margin-top: 1rem;
+      margin-left: 1rem;
+      display: flex;
+      .inputdata {
+        height: 2.75rem;
+        width: 18.6rem;
+        border: none;
+        border-radius: 0.6rem;
+        background-color: rgb(233, 239, 237);
+        display: flex;
+        justify-content: center;
+        padding-left: 20px;
+      }
+      .inputdata::placeholder {
+        color: #999999;
+        font-size: 0.9rem;
+        opacity: 1;
+      }
+    }
+    .upload {
+      margin-top: 1.5rem;
+      margin-left: 1rem;
+      height: 100px;
+      width: 6rem;
+      border-radius: 0.5rem;
+      border: 2px solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-image-source: linear-gradient(
+        277.64deg,
+        #4d8aff 8.32%,
+        #f53f9e 51.79%,
+        #ff9051 96.13%
+      );
+      background-color: #ffffff;
+      -webkit-box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
+      color: #FF5C00;
 
+    }
+  }
   .main-content {
     height: 100vh;
     width: calc(100% - 22%);
@@ -245,7 +326,11 @@ function handleClick(id) {
       justify-content: center;
       align-items: center;
       border-radius: 1rem;
-      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+      // box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+      box-shadow: -5px 2px 20px 0px rgba(128, 0, 128, 0.4);
+      // -2px 2px 20px 0px rgba(255, 165, 0, 0.4);
+      border: 1px solid #ff7f50;
+      transition: box-shadow 0.3s ease-in-out;
       .main-card-image {
         padding: 10px;
         max-width: 100%;
