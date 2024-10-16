@@ -106,7 +106,7 @@ function toggleSidebar() {
 
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 10%;
   right: 0;
   background-color: rgb(255, 255, 255);
   height: 100vh;

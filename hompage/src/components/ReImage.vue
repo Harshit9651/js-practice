@@ -153,7 +153,7 @@ const handleFileDrop = (event) => {
 .outer-circle {
   width: 120px;
   height: 120px;
-  background-color: #f5effe;
+  background-color: #f2edfa;
   border-radius: 50%;
   display: flex;
   justify-content: center;

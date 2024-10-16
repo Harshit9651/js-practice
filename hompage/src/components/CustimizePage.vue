@@ -148,11 +148,10 @@ function handleClick(id) {
         &.selected {
           color: black;
           border-radius: 0.3rem;
-
-          box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1),
-            0 0 20px 5px rgba(0, 0, 0, 0.1), 0 0 30px 0 rgba(77, 138, 255, 0.5),
-            0 0 40px 0 rgba(245, 63, 158, 0.5),
-            0 0 50px 0 rgba(255, 144, 81, 0.5);
+          box-shadow: -5px 2px 20px 0px rgba(128, 0, 128, 0.4); /* Left side purple shadow */
+          // -2px 2px 20px 0px rgba(255, 165, 0, 0.4);   /* Right side orange shadow */
+          border: 2px solid #ff7f50;
+          transition: box-shadow 0.3s ease-in-out;
         }
 
         h4 {
@@ -279,7 +278,7 @@ function handleClick(id) {
       align-items: center;
       margin-bottom: 1rem;
       .button-main-div {
-        margin-bottom: 30%;
+        // margin-bottom: 30%;
         height: 4.5rem;
         width: 20rem;
         background-color: aquamarine;

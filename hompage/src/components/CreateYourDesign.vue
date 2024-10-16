@@ -25,9 +25,9 @@
                   <i class="fa-solid fa-plus"></i>
                 </div></div
             ></span>
-          <h4>Drag & Drop or copy paste the image </h4>
-          <br>
-          <p id="fonting">Suport formats : png or jpg</p>
+            <h4>Drag & Drop or copy paste the image</h4>
+            <br />
+            <p id="fonting">Suport formats : png or jpg</p>
           </div>
         </div>
 
@@ -78,15 +78,36 @@ import { ref } from "vue";
 const Router = useRouter();
 let isfile = ref(false);
 const images = ref([
-  { src: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', label: 'Bathroom' },
-  { src: 'https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600', label: 'Living' },
-  { src: 'https://images.pexels.com/photos/342800/pexels-photo-342800.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Dinig' },
-  { src: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Kitcehn' },
-  { src: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Modern' },
-  { src: 'https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'colorfull' },
-  { src: 'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400', label: 'Bohemian' },
+  {
+    src: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    label: "Bathroom",
+  },
+  {
+    src: "https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=600",
+    label: "Living",
+  },
+  {
+    src: "https://images.pexels.com/photos/342800/pexels-photo-342800.jpeg?auto=compress&cs=tinysrgb&w=400",
+    label: "Dinig",
+  },
+  {
+    src: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=400",
+    label: "Kitcehn",
+  },
+  {
+    src: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400",
+    label: "Modern",
+  },
+  {
+    src: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=400",
+    label: "colorfull",
+  },
+  {
+    src: "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400",
+    label: "Bohemian",
+  },
 ]);
-const activeIndex = ref(0); 
+const activeIndex = ref(0);
 
 function showfile() {
   const file = sessionStorage.getItem("uploadedImage");
@@ -96,7 +117,7 @@ function showfile() {
 }
 showfile();
 function selectImage(index) {
-  activeIndex.value = index; 
+  activeIndex.value = index;
 }
 function Redricttootherpage() {
   Router.push("/result");
@@ -119,7 +140,6 @@ body {
   margin-right: 55%;
   display: flex;
   justify-content: center;
- 
 }
 
 .container {
@@ -132,7 +152,7 @@ body {
 .main-container {
   width: 1050px;
   height: 700px;
-  background-color: rgb(228, 231, 235);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -152,13 +172,16 @@ body {
 .left {
   width: 364px;
   height: 655px;
-  background: rgb(228, 231, 235);
+  background: rgb(255, 255, 255);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* For WebKit browsers (Safari/Chrome) */
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* For Firefox */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
     width: 100%;
@@ -200,10 +223,9 @@ body {
         }
       }
     }
-    #fonting{
-font-weight: 500;
-font-size: 14px;
-
+    #fonting {
+      font-weight: 500;
+      font-size: 14px;
     }
   }
 }
@@ -257,6 +279,9 @@ font-size: 14px;
   justify-content: flex-start;
   padding: 20px;
   border-radius: 0.5rem;
+  -webkit-box-shadow: -1px -1px 11px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px -1px 11px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px -1px 11px 0px rgba(0, 0, 0, 0.75);
 
   @media (max-width: 1024px) {
     width: 100%;
