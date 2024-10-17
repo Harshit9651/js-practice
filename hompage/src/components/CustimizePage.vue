@@ -27,6 +27,7 @@
       <div class="click-slidbar">
         <div class="add-p">
           <h2><span> </span> add products</h2>
+          <div class="cros"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="hr-tag"><hr /></div>
         <div class="input">
@@ -44,9 +45,10 @@
         <div class="catagory"><h3>choose a category</h3></div>
 
         <div class="cards">
-<div v-for="card in innercards" :key="card.id" class="card">
-
-</div>
+          <div v-for="card in innercards" :key="card.id" class="card">
+            <img :src="card.image" alt="card.name" class="inner-card-image" />
+            <p>{{ card.name }}</p>
+          </div>
         </div>
       </div>
       <div class="main-content">
@@ -98,18 +100,44 @@ const cardData = [
   { iconClass: "fa-solid fa-ban", text: "Remove Objects", id: 6 },
 ];
 
-const innercards =[
-  {id:1, image:"https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Bed"},
-  {id:2,imgae:"https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Ottomon"},
-  {id:3,imgae:"https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Chair"},
-  {id:4,imgae:"https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Lamp"},
-  {id:5,imgae:"https://images.pexels.com/photos/1046348/pexels-photo-1046348.jpeg?auto=compress&cs=tinysrgb&w=600",name:"plant"},
-  {id:6,imgae:"https://images.pexels.com/photos/28656089/pexels-photo-28656089/free-photo-of-elegant-vintage-ceiling-light-fixture-in-dim-room.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Light"},
-  {id:7,imgae:"https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Sofa"},
-  {id:8,imgae:"https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Table"},
-  {id:9, imgae:"https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Stool"},
-  
-]
+const innercards = [
+  {
+    id: 1,
+    image:
+      "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Bed",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Ottomon",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Chair",
+  },
+  {
+    id: 4,
+    image:
+      "https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Lamp",
+  },
+  {
+    id: 5,
+    image:
+      "https://images.pexels.com/photos/1046348/pexels-photo-1046348.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "plant",
+  },
+  {
+    id: 6,
+    image:
+      "https://images.pexels.com/photos/28656089/pexels-photo-28656089/free-photo-of-elegant-vintage-ceiling-light-fixture-in-dim-room.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Light",
+  },
+];
 
 const selectCard = ref(null);
 let slidbar = ref(false);
@@ -219,6 +247,12 @@ function handleClick(id) {
       margin-top: 1.3rem;
       display: flex;
       margin-left: 1rem;
+      position: relative;
+      .cros{
+        position: absolute;
+        margin-left: 5rem;
+        background-color: #ff5c00;
+      }
     }
     .hr-tag {
       margin-top: 1rem;
@@ -285,23 +319,59 @@ function handleClick(id) {
       display: flex;
       margin-left: 10px;
     }
-    .cards{
-      margin-top:1rem;
-      margin-left:.5rem;
-      height:18rem;
-      width:19rem;
-      background-color: aquamarine;
-      display:flex;
-      .card{
-        height:7.5rem;
-        width:5.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap:1.5rem;
-      }
-      
+    // .cards {
+    //   margin-top: 1rem;
+    //   margin-left: 0.5rem;
+    //   height: 18rem;
+    //   width: 19rem;
+    //   background-color: aquamarine;
+    //   display: flex;
+    // flex-wrap: wrap;
+
+    //   .card {
+    //     height: 7.5rem;
+    //     width: 5.5rem;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     gap: 1.5rem;
+    //     img {
+    //       max-width: 5rem;
+    //       height:5rem ;
+    //       border-radius: 0.3rem;
+    //     }
+    //   }
+    // }
+    .cards {
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+      height: 20rem;
+      width: 20rem;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    
+
+    .card {
+      height: 7.5rem;
+      width: 5.625rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0.3rem;
+      gap: 0.7rem;
+    
+
+    .card img {
+      width: 4.9rem;
+      height: 5.5rem;
+      border-radius: 0.5rem;
+      object-fit: cover;
     }
+  }
+}
   }
   .main-content {
     height: 100vh;
