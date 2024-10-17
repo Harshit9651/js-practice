@@ -28,7 +28,9 @@
         <div class="add-p">
           <h2><span> </span> add products</h2>
           <div class="cros">
-            <button @click="exitclickSlidbar"><i class="fa-solid fa-xmark"></i></button>
+            <button @click="exitclickSlidbar">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </div>
         </div>
         <div class="hr-tag"><hr /></div>
@@ -343,29 +345,6 @@ function exitclickSlidbar() {
       display: flex;
       margin-left: 10px;
     }
-    // .cards {
-    //   margin-top: 1rem;
-    //   margin-left: 0.5rem;
-    //   height: 18rem;
-    //   width: 19rem;
-    //   background-color: aquamarine;
-    //   display: flex;
-    // flex-wrap: wrap;
-
-    //   .card {
-    //     height: 7.5rem;
-    //     width: 5.5rem;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     gap: 1.5rem;
-    //     img {
-    //       max-width: 5rem;
-    //       height:5rem ;
-    //       border-radius: 0.3rem;
-    //     }
-    //   }
-    // }
     .cards {
       margin-top: 1rem;
       margin-left: 0.5rem;
