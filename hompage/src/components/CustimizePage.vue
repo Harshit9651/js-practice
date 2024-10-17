@@ -37,10 +37,16 @@
           />
         </div>
         <div class="upload">
-          <div class="inner-div">
-            <div class="circle"><i class="fa-solid fa-plus"></i></div>
-            Upload
-          </div>
+          <div class="circle"><i class="fa-solid fa-plus"></i></div>
+          Upload
+        </div>
+
+        <div class="catagory"><h3>choose a category</h3></div>
+
+        <div class="cards">
+<div v-for="card in innercards" :key="card.id" class="card">
+
+</div>
         </div>
       </div>
       <div class="main-content">
@@ -91,6 +97,19 @@ const cardData = [
   { iconClass: "fa-solid fa-store", text: "Room styles", id: 5 },
   { iconClass: "fa-solid fa-ban", text: "Remove Objects", id: 6 },
 ];
+
+const innercards =[
+  {id:1, image:"https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Bed"},
+  {id:2,imgae:"https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Ottomon"},
+  {id:3,imgae:"https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Chair"},
+  {id:4,imgae:"https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Lamp"},
+  {id:5,imgae:"https://images.pexels.com/photos/1046348/pexels-photo-1046348.jpeg?auto=compress&cs=tinysrgb&w=600",name:"plant"},
+  {id:6,imgae:"https://images.pexels.com/photos/28656089/pexels-photo-28656089/free-photo-of-elegant-vintage-ceiling-light-fixture-in-dim-room.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Light"},
+  {id:7,imgae:"https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Sofa"},
+  {id:8,imgae:"https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Table"},
+  {id:9, imgae:"https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg?auto=compress&cs=tinysrgb&w=600",name:"Stool"},
+  
+]
 
 const selectCard = ref(null);
 let slidbar = ref(false);
@@ -233,8 +252,8 @@ function handleClick(id) {
       margin-left: 1rem;
       height: 100px;
       width: 6rem;
-      border-radius: 0.5rem;
-      border: 2px solid;
+      border-radius: 1rem;
+      border: 2px solid transparent;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -248,6 +267,39 @@ function handleClick(id) {
       );
       border-image-slice: 1;
       color: #ff5c00;
+      gap: 0.4rem;
+
+      .circle {
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        background: #ff5c00;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .catagory {
+      margin-top: 2rem;
+      display: flex;
+      margin-left: 10px;
+    }
+    .cards{
+      margin-top:1rem;
+      margin-left:.5rem;
+      height:18rem;
+      width:19rem;
+      background-color: aquamarine;
+      display:flex;
+      .card{
+        height:7.5rem;
+        width:5.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:1.5rem;
+      }
       
     }
   }
