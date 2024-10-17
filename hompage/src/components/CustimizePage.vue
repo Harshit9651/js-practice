@@ -27,7 +27,7 @@
       <div class="click-slidbar">
         <div class="add-p">
           <h2><span> </span> add products</h2>
-          <div class="cros"><i class="fa-solid fa-xmark"></i></div>
+          <div class="cros"><button><i class="fa-solid fa-xmark"></i></button></div>
         </div>
         <div class="hr-tag"><hr /></div>
         <div class="input">
@@ -248,10 +248,17 @@ function handleClick(id) {
       display: flex;
       margin-left: 1rem;
       position: relative;
-      .cros{
+      .cros {
         position: absolute;
-        margin-left: 5rem;
-        background-color: #ff5c00;
+        margin-left: 17.5rem;
+        background-color: #eee9e6;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
       }
     }
     .hr-tag {
@@ -351,7 +358,7 @@ function handleClick(id) {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-    
+    }
 
     .card {
       height: 7.5rem;
@@ -362,7 +369,7 @@ function handleClick(id) {
       align-items: center;
       padding: 0.3rem;
       gap: 0.7rem;
-    
+    }
 
     .card img {
       width: 4.9rem;
@@ -371,8 +378,7 @@ function handleClick(id) {
       object-fit: cover;
     }
   }
-}
-  }
+
   .main-content {
     height: 100vh;
     width: calc(100% - 22%);
