@@ -239,18 +239,16 @@ function handleClick(id) {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      background-color: #ffffff;
       border-image-source: linear-gradient(
         277.64deg,
         #4d8aff 8.32%,
         #f53f9e 51.79%,
         #ff9051 96.13%
       );
-      background-color: #ffffff;
-      -webkit-box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
-      box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.75);
-      color: #FF5C00;
-
+      border-image-slice: 1;
+      color: #ff5c00;
+      
     }
   }
   .main-content {
