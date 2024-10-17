@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-container">
-      <div v-if="slidbar" class="slidbar main-slaidbar">
+      <div v-if="mainslidbar" class="slidbar main-slaidbar">
         <div class="ai-tools"><h3>AI editor tools</h3></div>
         <div class="hr-tag"><hr /></div>
         <div class="cards">
@@ -24,10 +24,12 @@
           </div>
         </div>
       </div>
-      <div class="click-slidbar">
+      <div v-if="clickslidbar" class="click-slidbar">
         <div class="add-p">
           <h2><span> </span> add products</h2>
-          <div class="cros"><button><i class="fa-solid fa-xmark"></i></button></div>
+          <div class="cros">
+            <button @click="exitclickSlidbar"><i class="fa-solid fa-xmark"></i></button>
+          </div>
         </div>
         <div class="hr-tag"><hr /></div>
         <div class="input">
@@ -140,10 +142,17 @@ const innercards = [
 ];
 
 const selectCard = ref(null);
-let slidbar = ref(false);
+let clickslidbar = ref(false);
+let mainslidbar = ref(true);
 
 function handleClick(id) {
   selectCard.value = id;
+  clickslidbar.value = !clickslidbar.value;
+  mainslidbar.value = !mainslidbar.value;
+}
+function exitclickSlidbar() {
+  clickslidbar.value = !clickslidbar.value;
+  mainslidbar.value = !mainslidbar.value;
 }
 </script>
 
@@ -258,7 +267,15 @@ function handleClick(id) {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-
+      }
+      .cros button {
+        all: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
       }
     }
     .hr-tag {
